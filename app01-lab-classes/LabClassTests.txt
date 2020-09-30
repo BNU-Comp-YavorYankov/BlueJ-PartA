@@ -1,12 +1,23 @@
-LabClass co452Lab = new LabClass(3);
+LabClass co452 = new LabClass(3);
+co452.setInstructor("Nicholas Day");
+co452.setRoom("G100");
+co452.setTime("29/09/20");
 Student yavor = new Student("Yavor Yankov", "123456");
 Student will = new Student("Will Smith", "345678");
 Student martin = new Student("Martin Lawrence", "567890");
-co452Lab.enrollStudent(yavor);
-co452Lab.enrollStudent(will);
-co452Lab.enrollStudent(martin);
+co452.enrollStudent(yavor);
+co452.enrollStudent(will);
+co452.enrollStudent(martin);
 yavor.addCredits(20);
 will.addCredits(20);
 martin.addCredits(20);
-yavor.changeName("Changing of student name method works correctly");
-yavor.changeName("Yavor Yankov");
+yavor.changeName("Wrong name");
+yavor.changeName("Yavor R Yankov");
+co452.printList();
+Lab class 29/09/20
+Instructor: Nicholas Day   Room: G100
+Class list:
+Yavor R Yankov, student ID: 123456, credits: 20
+Will Smith, student ID: 345678, credits: 20
+Martin Lawrence, student ID: 567890, credits: 20
+Number of students: 3
