@@ -1,0 +1,12 @@
+LabClass co452Lab = new LabClass(3);
+Student yavor = new Student("Yavor Yankov", "123456");
+Student will = new Student("Will Smith", "345678");
+Student martin = new Student("Martin Lawrence", "567890");
+co452Lab.enrollStudent(yavor);
+co452Lab.enrollStudent(will);
+co452Lab.enrollStudent(martin);
+yavor.addCredits(20);
+will.addCredits(20);
+martin.addCredits(20);
+yavor.changeName("Changing of student name method works correctly");
+yavor.changeName("Yavor Yankov");
