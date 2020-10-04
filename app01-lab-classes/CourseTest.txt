@@ -1,0 +1,9 @@
+Course programmingConceptsCourse = new Course("CO452", "Programming Concepts");
+Student yavor = new Student("Yavor Yankov", "Y20Y");
+Student mike = new Student("Mike Johnson", "M21J");
+yavor.addCourse(programmingConceptsCourse);
+yavor.print();
+Yavor Yankov, student ID: Y20Y, credits: 0
+course: CO452, Programming Concepts
+mike.print();
+Mike Johnson, student ID: M21J, credits: 0
