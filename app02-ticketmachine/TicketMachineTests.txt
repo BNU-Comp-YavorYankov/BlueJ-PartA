@@ -1,0 +1,73 @@
+TicketMachine ticketMachine = new TicketMachine();
+ Available tickets and its prices.
++--------------------------------+
+|1. Aylesbury costing £2.20
+|2. Amersham costing £3.00
+|3. High Wycombe costing £3.30
++--------------------------------+
+ Please, select one of the tickets as typing its destination.
+
+ticketMachine.selectTicket("Aylesbury");
+Selected ticket: Aylesbury costing £2.20
+Please insert coins into the machine to purchase this ticket or select more tickets.
+ticketMachine.selectTicket("Amersham");
+Selected ticket: Amersham costing £3.00
+Please insert coins into the machine to purchase this ticket or select more tickets.
+ticketMachine.selectTicket("High Wycombe");
+Selected ticket: High Wycombe costing £3.30
+Please insert coins into the machine to purchase this ticket or select more tickets.
+ticketMachine.selectTicket("Wrong destination");
+Selected ticket cannot be found!
+ticketMachine.insertMoney(Coin.p10);
+Insterted :10 cents
+Balance :10 cents
+You must insert at least: 320 more cents.
+ticketMachine.insertMoney(Coin.p100);
+Insterted :100 cents
+Balance :110 cents
+You must insert at least: 220 more cents.
+ticketMachine.insertMoney(Coin.p20);
+Insterted :20 cents
+Balance :130 cents
+You must insert at least: 200 more cents.
+ticketMachine.insertMoney(Coin.p200);
+Insterted :200 cents
+Balance :330 cents
+##################
+# The BlueJ Line
+# Ticket
+# 10/Oct/2020
+# Destination 
+# High Wycombe
+# 330 cents
+##################
+You must insert at least: 300 more cents to purchase your next selected ticket.
+ticketMachine.insertMoney(Coin.p200);
+Insterted :200 cents
+Balance :200 cents
+You must insert at least: 100 more cents.
+ticketMachine.insertMoney(Coin.p200);
+Insterted :200 cents
+Balance :400 cents
+##################
+# The BlueJ Line
+# Ticket
+# 10/Oct/2020
+# Destination 
+# Amersham
+# 300 cents
+##################
+You must insert at least: 120 more cents to purchase your next selected ticket.
+ticketMachine.insertMoney(Coin.p200);
+Insterted :200 cents
+Balance :300 cents
+##################
+# The BlueJ Line
+# Ticket
+# 10/Oct/2020
+# Destination 
+# Aylesbury
+# 220 cents
+##################
+Total collected 850 cents
+Change 80 cents
