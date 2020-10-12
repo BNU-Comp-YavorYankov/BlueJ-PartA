@@ -42,8 +42,29 @@ public class TicketMachine {
     /**
      * Return The amount of money already inserted for the next ticket.
      */
-    public double getBalance() {
-        return balance;
+    public int getBalance() {
+        return this.balance;
+    }
+
+    /**
+     * Return total money collected by this ticket machine
+     */
+    public int getTotal(){
+        return this.total;
+    }
+
+    /**
+     * Return the selected tickets collection
+     */
+    public ArrayList<Ticket> getSelectedTickets(){
+        return this.selectedTickets;
+    }
+
+    /**
+     * Return the last selected ticket 
+     */
+    public Ticket getLastSelectedTicket(){
+        return this.lastSelectedTicket;
     }
 
     /**
@@ -118,7 +139,55 @@ public class TicketMachine {
     }
 
     /**
-     * Set last selected ticket form the tickets collection
+     * Return the money in the balance. The balance is cleared.
+     */
+    public int refundBalance() {
+        int amountToRefund;
+        amountToRefund = balance;
+        balance = 0;
+
+        System.out.println("Total collected " + this.total + " cents");
+
+        // Print message on the Terminal, if there is an outstanding balance
+        if (amountToRefund > 0) {
+            System.out.println("Change " + amountToRefund + " cents");
+        }
+
+        return amountToRefund;
+    }
+
+    /**
+     * Select ticket as recieve its destination`s name from the parameter
+     */
+    public void selectTicket(String destination) {
+        // toLowerCase method set user`s input to be with lower case letters
+        switch (destination.toLowerCase()) {
+            case "aylesbury":
+                this.selectedTickets.add(AYLESBURY_TICKET);
+                setLastTicket();
+                printSelectedTicketMessage();
+                break;
+            case "amersham":
+                this.selectedTickets.add(AMERSHAM_TICKET);
+                setLastTicket();
+                printSelectedTicketMessage();
+                break;
+            case "high wycombe":
+                this.selectedTickets.add(HIGH_WYCOMBE_TICKET);
+                setLastTicket();
+                printSelectedTicketMessage();
+                break;
+            /*
+             * If the condition`s value does not match some of the above cases` values,
+             * print on the Terminal a message
+             */
+            default:
+                System.out.println("Selected ticket cannot be found!");
+        }
+    }
+
+    /**
+     * Set last selected ticket from the tickets collection
      */
     private void setLastTicket() {
         if (this.selectedTickets.size() != 0) {
@@ -139,58 +208,11 @@ public class TicketMachine {
     }
 
     /**
-     * Return the money in the balance. The balance is cleared.
-     */
-    public int refundBalance() {
-        int amountToRefund;
-        amountToRefund = balance;
-        balance = 0;
-
-        // Print message on the Terminal, if there is an outstanding balance and the total collected by the machine
-        if (amountToRefund > 0) {
-            System.out.println("Total collected " + this.total + " cents");
-            System.out.println("Change " + amountToRefund + " cents");
-        }
-
-        return amountToRefund;
-    }
-
-    /**
-     * Select ticket as recieve its destination`s name from the parameter
-     */
-    public void selectTicket(String destination) {
-        // toLowerCase method set user`s input to be with lower case letters
-        switch (destination.toLowerCase()) {
-            case "aylesbury":
-                this.selectedTickets.add(AYLESBURY_TICKET);
-                this.lastSelectedTicket = AYLESBURY_TICKET;
-                printSelectedTicketMessage();
-                break;
-            case "amersham":
-                this.selectedTickets.add(AMERSHAM_TICKET);
-                this.lastSelectedTicket = AMERSHAM_TICKET;
-                printSelectedTicketMessage();
-                break;
-            case "high wycombe":
-                this.selectedTickets.add(HIGH_WYCOMBE_TICKET);
-                this.lastSelectedTicket = HIGH_WYCOMBE_TICKET;
-                printSelectedTicketMessage();
-                break;
-            /*
-             * If the condition`s value does not match some of the above cases` values,
-             * print on the Terminal a message
-             */
-            default:
-                System.out.println("Selected ticket cannot be found!");
-        }
-    }
-
-    /**
      * Print the last selected ticket at the Terminal
      */
     private void printSelectedTicketMessage() {
         if (lastSelectedTicket != null) {
-            System.out.println("Selected ticket: " + this.lastSelectedTicket.toString());
+            System.out.println("Selected ticket: " + this.lastSelectedTicket);
             System.out.println("Please insert coins into the machine to purchase this ticket or select more tickets.");
         }
     }
@@ -201,9 +223,9 @@ public class TicketMachine {
     private void printAllAvailableTickets() {
         System.out.println(" Available tickets and its prices.");
         System.out.println("+--------------------------------+");
-        System.out.println("|1. " + AYLESBURY_TICKET.toString());
-        System.out.println("|2. " + AMERSHAM_TICKET.toString());
-        System.out.println("|3. " + HIGH_WYCOMBE_TICKET.toString());
+        System.out.println("|1. " + AYLESBURY_TICKET);
+        System.out.println("|2. " + AMERSHAM_TICKET);
+        System.out.println("|3. " + HIGH_WYCOMBE_TICKET);
         System.out.println("+--------------------------------+");
         System.out.println(" Please, select one of the tickets as typing its destination.\n");
     }
