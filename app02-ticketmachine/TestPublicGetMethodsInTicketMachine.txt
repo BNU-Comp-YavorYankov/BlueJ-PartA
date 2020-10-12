@@ -1,0 +1,56 @@
+TicketMachine ticketMachine = new TicketMachine();
+ Available tickets and its prices.
++--------------------------------+
+|1. Aylesbury costing £2.20
+|2. Amersham costing £3.00
+|3. High Wycombe costing £3.30
++--------------------------------+
+ Please, select one of the tickets as typing its destination.
+
+ticketMachine.selectTicket("High Wycombe");
+Selected ticket: High Wycombe costing £3.30
+Please insert coins into the machine to purchase this ticket or select more tickets.
+ticketMachine.selectTicket("Amersham");
+Selected ticket: Amersham costing £3.00
+Please insert coins into the machine to purchase this ticket or select more tickets.
+ticketMachine.getSelectedTickets()
+    returned Object <object reference>
+ticketMachine.getTotal()
+    returned int 0
+ticketMachine.insertMoney(Coin.p200);
+Insterted :200 cents
+Balance :200 cents
+You must insert at least: 100 more cents.
+ticketMachine.insertMoney(Coin.p200);
+Insterted :200 cents
+Balance :400 cents
+##################
+# The BlueJ Line
+# Ticket
+# 12/Oct/2020
+# Destination 
+# Amersham
+# 300 cents
+##################
+You must insert at least: 230 more cents to purchase your next selected ticket.
+ticketMachine.getTotal()
+    returned int 300
+ticketMachine.getBalance()
+    returned int 100
+ticketMachine.insertMoney(Coin.p200);
+Insterted :200 cents
+Balance :300 cents
+You must insert at least: 30 more cents.
+ticketMachine.insertMoney(Coin.p100);
+Insterted :100 cents
+Balance :400 cents
+##################
+# The BlueJ Line
+# Ticket
+# 12/Oct/2020
+# Destination 
+# High Wycombe
+# 330 cents
+##################
+Total collected 630 cents
+Change 70 cents
