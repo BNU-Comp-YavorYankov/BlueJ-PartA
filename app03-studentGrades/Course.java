@@ -37,4 +37,12 @@ public class Course {
     {
         return this.codeNumber;        
     }
+
+    /**
+     * Return text representation of this course details
+     */
+    @Override
+    public String toString(){
+        return "Course: " + this.codeNumber + ", " + this.title;
+    }
 }
