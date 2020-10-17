@@ -6,6 +6,10 @@ import java.util.*;
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
+ * 
+ * Modified by Yavor Yankov
+ * @version 16/10/2020
+ * 
  */
 public class Student
 {
@@ -15,7 +19,9 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
-    
+    // enrolled course of this student
+    private Course course;
+
     /**
      * Create a new student with a given name and ID number.
      */
@@ -58,13 +64,42 @@ public class Student
         credits += additionalPoints;
     }
 
-    
     /**
      * Return the number of credit points this student has accumulated.
      */
     public int getCredits()
     {
         return credits;
+    }
+
+    /**
+     * Return the enrolled course of this student  
+     */
+    public Course getCourse()
+    {
+        if(this.course == null){
+            System.out.println("This student is not enrolled for a course!");
+            return null;
+        }
+        return this.course;
+    }
+
+    /**
+     * Enroll this student for given a course
+     */
+    public void enrollCourse(Course newCourse)
+    {
+        if(this.course != null)
+        {
+            System.out.print("This student is already enrolled for a course - ");
+            this.course.print();
+        }
+        else
+        {
+            this.course = newCourse;
+            System.out.print(this.name + " has been enrolled successfuly for ");
+            this.course.print();
+        }
     }
 
     /**
@@ -76,7 +111,7 @@ public class Student
     {
         return name.substring(0,4) + id.substring(0,3);
     }
-    
+
     /**
      * Print the student's name and ID number to the output terminal.
      */
