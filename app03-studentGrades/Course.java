@@ -80,5 +80,12 @@ public class Course {
      */
     public void print() {
         System.out.println(this.codeNumber + ", " + this.title);
+        if(this.modules.size() > 0)
+        {
+            System.out.println("Modules: ");
+            for (Module module : modules) {
+                module.print();
+            }
+        }
     }
 }
