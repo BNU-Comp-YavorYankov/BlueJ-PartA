@@ -46,6 +46,7 @@ public class Module {
 
     /**
      * Set a percantage mark of this module
+     * Whenever is set a mark of this module this means that the module is completed
      */
     public void setMark(int mark) {
         this.isCompleted = true;
@@ -60,9 +61,9 @@ public class Module {
         sBuilder.append("(" + this.code + ")" + this.title + " - ");
 
         if (!this.isCompleted) {
-            sBuilder.append(" is have not completed yet\n");
+            sBuilder.append(" not completed\n");
         } else {
-            sBuilder.append(" awarded with " + this.mark + "%\n");
+            sBuilder.append(this.mark + "%\n");
         }
 
         System.out.println(sBuilder);

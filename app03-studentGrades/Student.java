@@ -102,34 +102,40 @@ public class Student {
      * Complete a module from enrolled course as provide module mark
      */
     public void completeModule(int mark, String moduleCode) {
-        // Check is this student enrolled for a course
-        if (isEnrolled()) {
+        if (mark > 100 || mark < 0) {
+            System.out.println("The mark cannot be less than zero or more than 100!");
+        } else {
+            // Check is this student enrolled for a course
+            if (isEnrolled()) {
 
-            // the module which want to be completed
-            var completedModule = getModuleByModuleCode(moduleCode);
+                // the module which want to be completed
+                var completedModule = getModuleByModuleCode(moduleCode);
 
-            if(completedModule == null){
-                System.out.println("The module with code " + moduleCode + " cannot be found!");
-            }
-            else{
-                completedModule.setMark(mark);
+                if (completedModule == null) {
+                    System.out.println("The module with code " + moduleCode + " cannot be found!");
+                } else {
+                    completedModule.setMark(mark);
 
-                this.course.updateModule(completedModule);
+                    this.credits += 15;
+
+                    this.course.updateModule(completedModule);
+                }
             }
         }
     }
-    
+
     /**
      * Return the module which has same module code with this from the parameter
      */
-    private Module getModuleByModuleCode(String moduleCode)
-    {
+    private Module getModuleByModuleCode(String moduleCode) {
         Module result = null;
-        
+
         // iterate all modules of the enrolled course
         for (Module module : this.course.getModules()) {
-            /* if the module code match with this of the current module 
-             set to result the current module */
+            /*
+             * if the module code match with this of the current module set to result the
+             * current module
+             */
             if (module.getModuleCode() == moduleCode) {
                 result = module;
             }

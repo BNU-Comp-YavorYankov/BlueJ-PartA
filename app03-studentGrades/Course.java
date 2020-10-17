@@ -14,7 +14,9 @@ public class Course {
     private String codeNumber;
     // the modules of this course
     private ArrayList<Module> modules;
-    
+    // the grade of this course
+    private Character grade;
+
     /**
      * Create a new course with title and code number
      */
@@ -46,6 +48,15 @@ public class Course {
     }
 
     /**
+     * Return the grade of this course 
+     * if all 4 modules are completed
+     */
+    public Character getGrade()
+    {
+        return this.grade;
+    }
+
+    /**
      * Add new module to this course
      */
     public void addModule(Module newModule) {
@@ -66,8 +77,59 @@ public class Course {
     public void updateModule(Module updatedModule){
         var moduleIndex = this.modules.indexOf(updatedModule);
         this.modules.set(moduleIndex, updatedModule);
-        
+
         updatedModule.print();
+
+        if(isCourseCompleted())
+        {
+            setGrade();
+        }
+    }
+
+    private void setGrade() {
+
+        if(this.modules.size() < 3){
+            System.out.println("A final grade can be calculated for a course consisting of 4 completed modules.");
+        }
+        else{
+            var averageMark = 0;
+            for (Module module : modules) {
+                averageMark += module.getMark(); 
+            }
+            averageMark /= 4;
+
+            if(averageMark >= 0 && averageMark <= 39)
+            {
+                this.grade = 'F';
+            }
+            else if(averageMark >= 40 && averageMark <= 49)
+            {
+                this.grade = 'D';
+            }
+            else if(averageMark >= 50 && averageMark <= 59)
+            {
+                this.grade = 'C';
+            }
+            else if(averageMark >= 60 && averageMark <= 69)
+            {
+                this.grade = 'B';
+            }
+            else if(averageMark >= 70 && averageMark <= 100)
+            {
+                this.grade = 'A';
+            }
+            System.out.println("The final grade of this course is " + this.grade);
+        }
+    }
+
+    private boolean isCourseCompleted() {
+        for (Module module : modules) {
+            if(module.getMark() == null)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -94,6 +156,9 @@ public class Course {
             for (Module module : modules) {
                 module.print();
             }
+        }
+        if(this.grade != null){
+            System.out.println("The final grade is " + this.grade);
         }
     }
 }
