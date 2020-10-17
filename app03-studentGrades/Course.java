@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-import javax.lang.model.util.ElementScanner14;
-
 /**
  * The Course class represents a course in a student grades system. It holds the
  * course details a code number and title.
@@ -16,7 +14,7 @@ public class Course {
     private String codeNumber;
     // the modules of this course
     private ArrayList<Module> modules;
-
+    
     /**
      * Create a new course with title and code number
      */
@@ -60,6 +58,16 @@ public class Course {
             this.modules.add(newModule);
             System.out.println("The module "+newModule.getTitile()+" was added successfuly.");
         }
+    }
+
+    /**
+     * Update module as completed 
+     */
+    public void updateModule(Module updatedModule){
+        var moduleIndex = this.modules.indexOf(updatedModule);
+        this.modules.set(moduleIndex, updatedModule);
+        
+        updatedModule.print();
     }
 
     /**

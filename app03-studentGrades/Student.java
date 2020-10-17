@@ -1,18 +1,17 @@
 import java.util.*;
 
 /**
- * The Student class represents a student in a student administration system.
- * It holds the student details relevant in our context.
+ * The Student class represents a student in a student administration system. It
+ * holds the student details relevant in our context.
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
  * 
- * Modified by Yavor Yankov
+ *          Modified by Yavor Yankov
  * @version 16/10/2020
  * 
  */
-public class Student
-{
+public class Student {
     // the student's full name
     private String name;
     // the student ID
@@ -25,8 +24,7 @@ public class Student
     /**
      * Create a new student with a given name and ID number.
      */
-    public Student(String fullName, String studentID)
-    {
+    public Student(String fullName, String studentID) {
         name = fullName;
         id = studentID;
         credits = 0;
@@ -35,67 +33,65 @@ public class Student
     /**
      * Return the full name of this student.
      */
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
     /**
      * Set a new name for this student.
      */
-    public void changeName(String replacementName)
-    {
+    public void changeName(String replacementName) {
         name = replacementName;
     }
 
     /**
      * Return the student ID of this student.
      */
-    public String getStudentID()
-    {
+    public String getStudentID() {
         return id;
     }
 
     /**
      * Add some credit points to the student's accumulated credits.
      */
-    public void addCredits(int additionalPoints)
-    {
+    public void addCredits(int additionalPoints) {
         credits += additionalPoints;
     }
 
     /**
      * Return the number of credit points this student has accumulated.
      */
-    public int getCredits()
-    {
+    public int getCredits() {
         return credits;
     }
 
     /**
-     * Return the enrolled course of this student  
+     * Return the enrolled course of this student
      */
-    public Course getCourse()
-    {
-        if(this.course == null){
-            System.out.println("This student is not enrolled for a course!");
-            return null;
+    public Course getCourse() {
+        if (isEnrolled()) {
+            return this.course;
         }
-        return this.course;
+        return null;
+    }
+
+    /**
+     * Return the login name of this student. The login name is a combination of the
+     * first four characters of the student's name and the first three characters of
+     * the student's ID number.
+     */
+    public String getLoginName() {
+        return name.substring(0, 4) + id.substring(0, 3);
     }
 
     /**
      * Enroll this student for given a course
      */
-    public void enrollCourse(Course newCourse)
-    {
-        if(this.course != null)
-        {
+    public void enrollCourse(Course newCourse) {
+        if (this.course != null) {
             System.out.print("This student is already enrolled for a course - ");
             this.course.print();
-        }
-        else
-        {
+        } else {
             this.course = newCourse;
             System.out.print(this.name + " has been enrolled successfuly for ");
             this.course.print();
@@ -103,20 +99,60 @@ public class Student
     }
 
     /**
-     * Return the login name of this student. The login name is a combination
-     * of the first four characters of the student's name and the first three
-     * characters of the student's ID number.
+     * Complete a module from enrolled course as provide module mark
      */
-    public String getLoginName()
+    public void completeModule(int mark, String moduleCode) {
+        // Check is this student enrolled for a course
+        if (isEnrolled()) {
+
+            // the module which want to be completed
+            var completedModule = getModuleByModuleCode(moduleCode);
+
+            if(completedModule == null){
+                System.out.println("The module with code " + moduleCode + " cannot be found!");
+            }
+            else{
+                completedModule.setMark(mark);
+
+                this.course.updateModule(completedModule);
+            }
+        }
+    }
+    
+    /**
+     * Return the module which has same module code with this from the parameter
+     */
+    private Module getModuleByModuleCode(String moduleCode)
     {
-        return name.substring(0,4) + id.substring(0,3);
+        Module result = null;
+        
+        // iterate all modules of the enrolled course
+        for (Module module : this.course.getModules()) {
+            /* if the module code match with this of the current module 
+             set to result the current module */
+            if (module.getModuleCode() == moduleCode) {
+                result = module;
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * Is this student enrolled for a course
+     */
+    private boolean isEnrolled() {
+        if (this.course == null) {
+            System.out.println("This student is not enrolled for any courses!");
+            return false;
+        }
+        return true;
     }
 
     /**
      * Print the student's name and ID number to the output terminal.
      */
-    public void print()
-    {
+    public void print() {
         System.out.println(name + ", student ID: " + id + ", credits: " + credits);
     }
 }
