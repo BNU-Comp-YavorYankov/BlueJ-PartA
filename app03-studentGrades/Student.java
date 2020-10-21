@@ -23,6 +23,9 @@ public class Student {
 
     /**
      * Create a new student with a given name and ID number.
+     * 
+     * @param fullName
+     * @param studentId
      */
     public Student(String fullName, String studentID) {
         name = fullName;
@@ -86,6 +89,8 @@ public class Student {
 
     /**
      * Enroll this student for given a course
+     * 
+     * @param newCourse for which this student will be enrolled
      */
     public void enrollCourse(Course newCourse) {
         if (this.course != null) {
@@ -100,6 +105,9 @@ public class Student {
 
     /**
      * Complete a module from enrolled course as provide module mark
+     * 
+     * @param mark
+     * @param moduleCode
      */
     public void completeModule(int mark, String moduleCode) {
         if (mark > 100 || mark < 0) {
@@ -114,11 +122,16 @@ public class Student {
                 if (completedModule == null) {
                     System.out.println("The module with code " + moduleCode + " cannot be found!");
                 } else {
-                    completedModule.setMark(mark);
+                    if (mark > 39) {
+                        completedModule.setMark(mark);
 
-                    this.credits += 15;
+                        this.credits += 15;
 
-                    this.course.updateModule(completedModule);
+                        this.course.updateModule(completedModule);
+                    } else {
+                        System.out.println("You could not pass this module" + "(" + completedModule.getModuleCode()
+                                + ")" + completedModule.getTitile() + "!");
+                    }
                 }
             }
         }
@@ -126,6 +139,8 @@ public class Student {
 
     /**
      * Return the module which has same module code with this from the parameter
+     * 
+     * @param moduleCode
      */
     private Module getModuleByModuleCode(String moduleCode) {
         Module result = null;
@@ -160,5 +175,8 @@ public class Student {
      */
     public void print() {
         System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        if (this.course != null) {
+            this.course.print();
+        }
     }
 }

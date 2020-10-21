@@ -1,3 +1,10 @@
+/**
+ * The Module class represents a module in a student grades system. It holds the
+ * module details a module code , mark and title.
+ *
+ * @author Yavor Yankov
+ * @version 16/10/2020
+ */
 public class Module {
     // the title of this module
     private String title;
@@ -10,6 +17,9 @@ public class Module {
 
     /**
      * Create a new module with title, module code and mark
+     * 
+     * @param title
+     * @param code  of the module
      */
     public Module(String title, String code) {
         this.title = title;
@@ -39,14 +49,14 @@ public class Module {
         if (this.isCompleted) {
             return this.mark;
         }
-
-        System.out.println("Cannot be provided a grade because this module is not completed yet.");
         return null;
     }
 
     /**
-     * Set a percantage mark of this module
-     * Whenever is set a mark of this module this means that the module is completed
+     * Set a percantage mark of this module Whenever is set a mark of this module
+     * this means that the module is completed
+     * 
+     * @param mark
      */
     public void setMark(int mark) {
         this.isCompleted = true;
