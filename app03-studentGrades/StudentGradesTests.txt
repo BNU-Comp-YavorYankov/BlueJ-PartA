@@ -1,0 +1,47 @@
+Student john = new Student("John Smith", "12345");
+Course softwareEngineeringCourse = new Course("Software Engineering", "SE19");
+Module computerArchitectureModule = new Module("Computer Architectures", "CO450");
+Module programmingConceptsModule = new Module("Programming Concepts", "CO452");
+Module digitalTechnologiesModule = new Module("Digital Technologies", "CO454");
+Module webDevelopmentModule = new Module("Web Development", "CO456");
+softwareEngineeringCourse.addModule(computerArchitectureModule);
+The module Computer Architectures was added successfuly.
+john.enrollCourse(softwareEngineeringCourse);
+John Smith has been enrolled successfuly for SE19, Software Engineering
+Modules: 
+(CO450)Computer Architectures -  not completed
+
+softwareEngineeringCourse.addModule(programmingConceptsModule);
+The module Programming Concepts was added successfuly.
+softwareEngineeringCourse.addModule(digitalTechnologiesModule);
+The module Digital Technologies was added successfuly.
+softwareEngineeringCourse.addModule(webDevelopmentModule);
+The module Web Development was added successfuly.
+softwareEngineeringCourse.addModule(webDevelopmentModule);
+Courses can have up to 4 modules!
+softwareEngineeringCourse.print();
+SE19, Software Engineering
+Modules: 
+(CO450)Computer Architectures -  not completed
+
+(CO452)Programming Concepts -  not completed
+
+(CO454)Digital Technologies -  not completed
+
+(CO456)Web Development -  not completed
+
+john.completeModule(60, "CO452");
+(CO452)Programming Concepts - 60%
+
+john.completeModule(40, "CO450");
+(CO450)Computer Architectures - 40%
+
+john.completeModule(70, "CO454");
+(CO454)Digital Technologies - 70%
+
+john.completeModule(90, "CO456");
+(CO456)Web Development - 90%
+
+The final grade of this course is B
+john.completeModule(30, "CO454");
+You could not pass this module(CO454)Digital Technologies!
