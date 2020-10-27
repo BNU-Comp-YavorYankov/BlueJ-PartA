@@ -44,4 +44,17 @@ john.completeModule(90, "CO456");
 
 The final grade of this course is B
 john.completeModule(30, "CO454");
-You could not pass this module(CO454)Digital Technologies!
+You could not pass this module(CO454)Digital Technologies
+john.print();
+John Smith, student ID: 12345, credits: 60
+SE19, Software Engineering
+Modules:
+(CO450)Computer Architectures -  40%
+
+(CO452)Programming Concepts -  60%
+
+(CO454)Digital Technologies -  70%
+
+(CO456)Web Development -  90%
+
+The final grade is B
