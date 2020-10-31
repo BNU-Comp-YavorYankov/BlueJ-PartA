@@ -26,13 +26,25 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        stock.add(item);
+        if(isIdExists(item.getID()))
+        {
+            System.out.println("Duplicate Ids, please provide different id!");
+        }
+        else if(isNameExists(item.getName()))
+        {
+            System.out.println("Name already exists, please provide different name!");
+        }
+        else
+        {
+            stock.add(item);
+        }
     }
     
     /**
-     * Receive a delivery of a particular product.
-     * Increase the quantity of the product by the given amount.
-     * @param id The ID of the product.
+     * Receive a delivery of a particular product. Increase the quantity of the
+     * product by the given amount.
+     * 
+     * @param id     The ID of the product.
      * @param amount The amount to increase the quantity by.
      */
     public void delivery(int id, int amount)
@@ -60,7 +72,6 @@ public class StockManager
             printProduct(id);
         }
     }    
-
     
     /**
      * Locate a product with the given ID, and return how
@@ -73,7 +84,7 @@ public class StockManager
     {
         return 0;
     }
-
+    
     /**
      * Print details of the given product. If found,
      * its name and stock quantity will be shown.
@@ -104,7 +115,40 @@ public class StockManager
         {
             System.out.println(product);
         }
-
+        
         System.out.println();
     }
+
+    /**
+     * @return Is id exists in the stock collection
+     * 
+     * @param productId The id of a product
+     */
+    private boolean isIdExists(int productId) 
+    {
+        for (Product product : stock) {
+            if(product.getID() == productId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @return Is name exists in the stock collection
+     * 
+     * @param productName The name of a product 
+     */
+    private boolean isNameExists(String productName) 
+    {
+        for (Product product : stock) {
+            if(product.getName() == productName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
