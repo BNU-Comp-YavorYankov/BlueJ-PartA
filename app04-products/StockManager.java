@@ -24,6 +24,7 @@ public class StockManager
      * Add a product to the list.
      * @param item The item to be added.
      */
+    // Test the method... -------------------------------------------------------------------
     public void addProduct(Product item)
     {
         if(isIdExists(item.getID()))
@@ -42,17 +43,37 @@ public class StockManager
     
     /**
      * Receive a delivery of a particular product. Increase the quantity of the
-     * product by the given amount.
+     * product by the given amount if the product exists. 
+     * If the product does not exists it will be added to the stock collection.
      * 
      * @param id     The ID of the product.
      * @param amount The amount to increase the quantity by.
      */
+    // Test the method... -------------------------------------------------------------------
     public void delivery(int id, int amount)
     {
+        var product = findProductById(id);
+        if(product != null)
+        {
+            product.increaseQuantity(amount);
+        }
     }
     
-    public Product findProduct(int id)
+    /**
+     * @return The product which has same id as parameter`s id.
+     * 
+     * @param id The id of a product.
+     */
+    // Test the method... -------------------------------------------------------------------
+    public Product findProductById(int id)
     {
+        for (Product product : stock) {
+            if(product.getID() == id)
+            {
+                return product;
+            }
+        }
+        System.out.println("Product with id: "+id+" cannot be found!");
         return null;
     }
     
@@ -63,7 +84,7 @@ public class StockManager
      */
     public void sellProduct(int id)
     {
-        Product product = findProduct(id);
+        Product product = findProductById(id);
         
         if(product != null) 
         {
@@ -77,6 +98,7 @@ public class StockManager
      * Locate a product with the given ID, and return how
      * many of this item are in stock. If the ID does not
      * match any product, return zero.
+     * 
      * @param id The ID of the product.
      * @return The quantity of the given product in stock.
      */
@@ -92,7 +114,7 @@ public class StockManager
      */
     public void printProduct(int id)
     {
-        Product product = findProduct(id);
+        Product product = findProductById(id);
         
         if(product != null) 
         {
