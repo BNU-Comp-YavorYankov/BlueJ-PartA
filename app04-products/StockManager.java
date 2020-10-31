@@ -53,6 +53,7 @@ public class StockManager
     public void delivery(int id, int amount)
     {
         var product = findProductById(id);
+
         if(product != null)
         {
             product.increaseQuantity(amount);
@@ -81,15 +82,16 @@ public class StockManager
      * Sell one of the given item.
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
+     * @param amount The amount of the products being sold.
      */
-    public void sellProduct(int id)
+    // Test the method... -------------------------------------------------------------------
+    public void sellProduct(int id, int amount)
     {
         Product product = findProductById(id);
         
         if(product != null) 
         {
-            printProduct(id);
-            product.sellOne();
+            product.sell(amount);
             printProduct(id);
         }
     }    
@@ -102,8 +104,15 @@ public class StockManager
      * @param id The ID of the product.
      * @return The quantity of the given product in stock.
      */
+    // Test the method... -------------------------------------------------------------------
     public int numberInStock(int id)
     {
+        var product = findProductById(id);
+
+        if(product != null)
+        {
+            return product.getQuantity();
+        }
         return 0;
     }
     
@@ -118,7 +127,7 @@ public class StockManager
         
         if(product != null) 
         {
-            System.out.println(product.toString());
+            System.out.println(product);
         }
     }
     

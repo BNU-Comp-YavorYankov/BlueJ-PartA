@@ -56,7 +56,7 @@ public class Product {
         if (amount > 0) 
         {
             quantity += amount;
-            System.out.println(amount + " " + this.name + " has been added!");
+            System.out.println(amount + " " + this.name + " has been added to stock!");
         } 
         else 
         {
@@ -65,14 +65,27 @@ public class Product {
     }
 
     /**
-     * Sell one of these products. An error is reported if there appears to be no
-     * stock.
+     * Sell given amount of these products. An error is reported if there appears to be no
+     * stock or the requested amount is more than the amount on stock.
      */
-    public void sellOne() 
+    // Test the method... -------------------------------------------------------------------
+    public void sell(int amount) 
     {
         if (quantity > 0) 
         {
-            quantity--;
+            if(amount < 0)
+            {
+                System.out.println("Amount cannot be less than zero!");
+            }
+            else if(amount <= quantity)
+            {
+                this.quantity -= amount;
+                System.out.println(amount + " "+ this.name + " has been sold!");
+            }
+            else
+            {
+                System.out.println("The requested amount of products is more than the available quantity!");
+            }
         } 
         else 
         {
