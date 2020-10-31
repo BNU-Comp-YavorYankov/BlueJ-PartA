@@ -56,6 +56,7 @@ public class Product {
         if (amount > 0) 
         {
             quantity += amount;
+            System.out.println(amount + " " + this.name + " has been added!");
         } 
         else 
         {
