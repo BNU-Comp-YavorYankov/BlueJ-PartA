@@ -40,7 +40,56 @@ public class StockManager
             stock.add(item);
         }
     }
-    
+
+    /**
+     * Finds the product and rename the existing name with a new one provided from the parameter. 
+     * @param id The id of the product
+     * @param newProductName The new name of the product
+     */
+    public void renameProduct(int id,String newProductName)
+    {
+        var product = findProductById(id);
+
+        if(product != null)
+        {
+            // Keeps the old name of the product
+            var oldName = product.getName();
+            // Sets the new name of the product
+            product.setName(newProductName);
+
+            // Check is the new product`s name set successfully
+            if(oldName != product.getName())
+            {
+                System.out.println("Renamed product name: "+ oldName+ " to " + product.getName());
+
+                updateProductInStock(product);
+            }
+            else
+            {
+                System.out.println("The product has not been renamed!");
+            }
+        }
+    }
+
+    /**
+     * Locate a product with the given ID, and return how many of this item are in
+     * stock. If the ID does not match any product, return zero.
+     * 
+     * @param id The ID of the product.
+     * @return The quantity of the given product in stock.
+     */
+    // Test the method... -------------------------------------------------------------------
+    public int getNumberInStock(int id)
+    {
+        var product = findProductById(id);
+
+        if(product != null)
+        {
+            return product.getQuantity();
+        }
+        return 0;
+    }
+
     /**
      * Receive a delivery of a particular product. Increase the quantity of the
      * product by the given amount if the product exists. 
@@ -95,30 +144,26 @@ public class StockManager
             printProduct(id);
         }
     }    
-    
+
     /**
-     * Locate a product with the given ID, and return how
-     * many of this item are in stock. If the ID does not
-     * match any product, return zero.
-     * 
-     * @param id The ID of the product.
-     * @return The quantity of the given product in stock.
+     * Find and delete a product from the stock collection
+     * @param id The id of the product.
      */
-    // Test the method... -------------------------------------------------------------------
-    public int numberInStock(int id)
+    public void deleteProduct(int id)
     {
         var product = findProductById(id);
 
         if(product != null)
         {
-            return product.getQuantity();
+            this.stock.remove(product);
+            System.out.println(product + " has been deleted successfully!");
         }
-        return 0;
     }
-    
+
     /**
-     * Print details of the given product. If found,
-     * its name and stock quantity will be shown.
+     * Print details of the given product. If found, its name and stock quantity
+     * will be shown.
+     * 
      * @param id The ID of the product to look for.
      */
     public void printProduct(int id)
@@ -154,6 +199,23 @@ public class StockManager
             System.out.println("Stock list is empty!");
         }
     }
+
+    /**
+     * Update a product in the stock collection.
+     * @param updatedProduct The updated product which will replace the non-updated one in the stock.
+     */
+    private void updateProductInStock(Product updatedProduct)
+    {
+        // get non updated product
+        var product = findProductById(updatedProduct.getID());
+
+        // the index of the non updated product in the stock arraylist
+        var index = stock.indexOf(product);
+
+        // set the updated product in stock collection
+        this.stock.set(index, updatedProduct);
+    }
+
 
     /**
      * @return Is id exists in the stock collection

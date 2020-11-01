@@ -39,6 +39,23 @@ public class Product {
     }
 
     /**
+     * Set a name of this product
+     * @param newName The new name of this product 
+     */
+    // Test the method... -------------------------------------------------------------------
+    public void setName(String newName)
+    {
+        if(newName.length() < 5)
+        {
+            System.out.println("The product`s name cannot be less than 5 symbols!");
+        }
+        else
+        {
+            this.name = newName;
+        }
+    }
+
+    /**
      * @return The quantity in stock.
      */
     public int getQuantity() {
