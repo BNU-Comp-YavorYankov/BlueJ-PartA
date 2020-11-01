@@ -201,6 +201,25 @@ public class StockManager
     }
 
     /**
+     * Print all products which has the word from the parameter in their names.
+     */
+    public void printProductsWithPartName(String partName)
+    {
+        var products = findProductsByPartName(partName);
+
+        if(products.size() > 0)
+        {
+            for (Product product : products) {
+                System.out.println(product);
+            }
+        }
+        else
+        {
+            System.out.println("There is no any products consisting " + partName + " in their names!");
+        }
+    }
+
+    /**
      * Print out each product in the stock
      * whose stock level is low
      */
@@ -218,6 +237,26 @@ public class StockManager
         {
             System.out.println("There is no any products with low stock level!");
         }
+    }
+
+     /**
+     * Find all products which have same word in their names as from the parameter 
+     * 
+     * @param partName The part of the product name
+     * @return The products with a same part in their names
+     */
+    private ArrayList<Product> findProductsByPartName(String partName)
+    {
+        var result = new ArrayList<Product>();
+        for (Product product : stock) {
+            for (String word : product.getName().split(" ")) {
+                if(word == partName)
+                {
+                    result.add(product);
+                }
+            }
+        }
+        return result;
     }
 
     /**
