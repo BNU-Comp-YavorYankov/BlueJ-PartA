@@ -201,8 +201,46 @@ public class StockManager
     }
 
     /**
+     * Print out each product in the stock
+     * whose stock level is low
+     */
+    public void printLowStockLevelProducts()
+    {
+        var products = getLowStockLevelProducts();
+
+        if(products.size() > 0)
+        {
+            for (Product product : products) {
+                System.out.println(product);
+            }
+        }
+        else
+        {
+            System.out.println("There is no any products with low stock level!");
+        }
+    }
+
+    /**
+     * Get all products whose stock level is low
+     * @return The products with low stock level
+     */
+    private ArrayList<Product> getLowStockLevelProducts() 
+    {
+        var result = new ArrayList<Product>();
+        for (Product product : stock) {
+            if(product.getQuantity() <= 1)
+            {
+                result.add(product);
+            }
+        }
+        return result;
+    }
+
+    /**
      * Update a product in the stock collection.
-     * @param updatedProduct The updated product which will replace the non-updated one in the stock.
+     * 
+     * @param updatedProduct The updated product which will replace the non-updated
+     *                       one in the stock.
      */
     private void updateProductInStock(Product updatedProduct)
     {
