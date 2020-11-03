@@ -52,21 +52,28 @@ public class StockManager
 
         if(product != null)
         {
-            // Keeps the old name of the product
-            var oldName = product.getName();
-            // Sets the new name of the product
-            product.setName(newProductName);
-
-            // Check is the new product`s name set successfully
-            if(oldName != product.getName())
+            if(isNameExists(newProductName))
             {
-                System.out.println("Renamed product name: "+ oldName+ " to " + product.getName());
-
-                updateProductInStock(product);
+                System.out.println("Name already exists, please provide different name!");
             }
             else
             {
-                System.out.println("The product has not been renamed!");
+                // Keeps the old name of the product
+                var oldName = product.getName();
+                // Sets the new name of the product
+                product.setName(newProductName);
+                
+                // Check is the new product`s name set successfully
+                if(oldName != product.getName())
+                {
+                    System.out.println("Renamed product name: "+ oldName+ " to " + product.getName());
+                    
+                    updateProductInStock(product);
+                }
+                else
+                {
+                    System.out.println("The product has not been renamed!");
+                }
             }
         }
     }
