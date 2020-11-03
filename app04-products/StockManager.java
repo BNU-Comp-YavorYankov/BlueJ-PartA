@@ -4,8 +4,8 @@ import java.util.ArrayList;
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Yavor Yankov
+ * @version 03/11/2020
  */
 public class StockManager
 {
@@ -48,7 +48,7 @@ public class StockManager
      */
     public void renameProduct(int id,String newProductName)
     {
-        var product = findProductById(id);
+        Product product = findProductById(id);
 
         if(product != null)
         {
@@ -59,7 +59,7 @@ public class StockManager
             else
             {
                 // Keeps the old name of the product
-                var oldName = product.getName();
+                String oldName = product.getName();
                 // Sets the new name of the product
                 product.setName(newProductName);
                 
@@ -67,8 +67,6 @@ public class StockManager
                 if(oldName != product.getName())
                 {
                     System.out.println("Renamed product name: "+ oldName+ " to " + product.getName());
-                    
-                    updateProductInStock(product);
                 }
                 else
                 {
@@ -88,7 +86,7 @@ public class StockManager
     // Test the method... -------------------------------------------------------------------
     public int getNumberInStock(int id)
     {
-        var product = findProductById(id);
+        Product product = findProductById(id);
 
         if(product != null)
         {
@@ -108,7 +106,7 @@ public class StockManager
     // Test the method... -------------------------------------------------------------------
     public void delivery(int id, int amount)
     {
-        var product = findProductById(id);
+        Product product = findProductById(id);
 
         if(product != null)
         {
@@ -130,7 +128,7 @@ public class StockManager
                 return product;
             }
         }
-        System.out.println("Product with id: "+id+" cannot be found!");
+        System.out.println("Product with id: " + id + " cannot be found!");
         return null;
     }
     
@@ -158,7 +156,7 @@ public class StockManager
      */
     public void deleteProduct(int id)
     {
-        var product = findProductById(id);
+        Product product = findProductById(id);
 
         if(product != null)
         {
@@ -212,7 +210,7 @@ public class StockManager
      */
     public void printProductsWithPartName(String partName)
     {
-        var products = findProductsByPartName(partName);
+        ArrayList<Product> products = findProductsByPartName(partName);
 
         if(products.size() > 0)
         {
@@ -232,7 +230,7 @@ public class StockManager
      */
     public void printLowStockLevelProducts()
     {
-        var products = getLowStockLevelProducts();
+        ArrayList<Product> products = getLowStockLevelProducts();
 
         if(products.size() > 0)
         {
@@ -254,8 +252,11 @@ public class StockManager
      */
     private ArrayList<Product> findProductsByPartName(String partName)
     {
-        var result = new ArrayList<Product>();
+        ArrayList<Product> result = new ArrayList<Product>();
+        
+        //Iterate all the products in stock collection
         for (Product product : stock) {
+            // Get the product name then split it by space and iterate the words
             for (String word : product.getName().split(" ")) {
                 if(word == partName)
                 {
@@ -272,7 +273,7 @@ public class StockManager
      */
     private ArrayList<Product> getLowStockLevelProducts() 
     {
-        var result = new ArrayList<Product>();
+        ArrayList<Product> result = new ArrayList<Product>();
         for (Product product : stock) {
             if(product.getQuantity() <= 1)
             {
@@ -281,25 +282,6 @@ public class StockManager
         }
         return result;
     }
-
-    /**
-     * Update a product in the stock collection.
-     * 
-     * @param updatedProduct The updated product which will replace the non-updated
-     *                       one in the stock.
-     */
-    private void updateProductInStock(Product updatedProduct)
-    {
-        // get non updated product
-        var product = findProductById(updatedProduct.getID());
-
-        // the index of the non updated product in the stock arraylist
-        var index = stock.indexOf(product);
-
-        // set the updated product in stock collection
-        this.stock.set(index, updatedProduct);
-    }
-
 
     /**
      * @return Is id exists in the stock collection
