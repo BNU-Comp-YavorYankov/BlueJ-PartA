@@ -29,11 +29,11 @@ public class StockManager
     {
         if(isIdExists(item.getID()))
         {
-            System.out.println("Duplicate Ids, please provide different id!");
+            System.out.println("Id "+ item.getID() +" is duplicate, please provide different id!");
         }
         else if(isNameExists(item.getName()))
         {
-            System.out.println("Name already exists, please provide different name!");
+            System.out.println("Product with name " + item.getName() + " already exists, please provide different name!");
         }
         else
         {
@@ -83,7 +83,6 @@ public class StockManager
      * @param id The ID of the product.
      * @return The quantity of the given product in stock.
      */
-    // Test the method... -------------------------------------------------------------------
     public int getNumberInStock(int id)
     {
         Product product = findProductById(id);
@@ -103,7 +102,6 @@ public class StockManager
      * @param id     The ID of the product.
      * @param amount The amount to increase the quantity by.
      */
-    // Test the method... -------------------------------------------------------------------
     public void delivery(int id, int amount)
     {
         Product product = findProductById(id);
@@ -119,7 +117,6 @@ public class StockManager
      * 
      * @param id The id of a product.
      */
-    // Test the method... -------------------------------------------------------------------
     public Product findProductById(int id)
     {
         for (Product product : stock) {
@@ -138,7 +135,6 @@ public class StockManager
      * @param id The ID of the product being sold.
      * @param amount The amount of the products being sold.
      */
-    // Test the method... -------------------------------------------------------------------
     public void sellProduct(int id, int amount)
     {
         Product product = findProductById(id);
@@ -207,6 +203,8 @@ public class StockManager
 
     /**
      * Print all products which has the word from the parameter in their names.
+     * 
+     * @param partName A word which might consists in some products` names.
      */
     public void printProductsWithPartName(String partName)
     {
@@ -214,6 +212,10 @@ public class StockManager
 
         if(products.size() > 0)
         {
+            System.out.println();
+            System.out.println("Products consisting " + partName + ":");
+            System.out.println("=====================================");
+            System.out.println();
             for (Product product : products) {
                 System.out.println(product);
             }
@@ -230,11 +232,17 @@ public class StockManager
      */
     public void printLowStockLevelProducts()
     {
+        System.out.println();
+        System.out.println("Low stock level products list");
+        System.out.println("=============================");
+        System.out.println();
+        
         ArrayList<Product> products = getLowStockLevelProducts();
 
         if(products.size() > 0)
         {
             for (Product product : products) {
+                System.out.println("");
                 System.out.println(product);
             }
         }
@@ -244,13 +252,13 @@ public class StockManager
         }
     }
 
-     /**
+    /**
      * Find all products which have same word in their names as from the parameter 
      * 
      * @param partName The part of the product name
-     * @return The products with a same part in their names
+     * @return The products with a same word in their names
      */
-    private ArrayList<Product> findProductsByPartName(String partName)
+    private ArrayList<Product>  findProductsByPartName(String partName)
     {
         ArrayList<Product> result = new ArrayList<Product>();
         
