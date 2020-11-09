@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+ 
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
@@ -258,15 +258,21 @@ public class StockManager
      * @param partName The part of the product name
      * @return The products with a same word in their names
      */
-    private ArrayList<Product>  findProductsByPartName(String partName)
+    private ArrayList<Product> findProductsByPartName(String partName)
     {
         ArrayList<Product> result = new ArrayList<Product>();
-        
+            
         //Iterate all the products in stock collection
         for (Product product : stock) {
-            // Get the product name then split it by space and iterate the words
-            for (String word : product.getName().split(" ")) {
-                if(word == partName)
+            // Get the product name then split it by space
+            String[] productNameWords = product
+                .getName()
+                .split(" ");
+            
+            // Iterate the words
+            for (String word : productNameWords)
+            {
+                if(word.equals(partName))
                 {
                     result.add(product);
                 }

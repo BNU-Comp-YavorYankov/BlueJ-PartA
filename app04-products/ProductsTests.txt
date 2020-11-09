@@ -1,0 +1,147 @@
+StockManager stockManager = new StockManager();
+StockDemo demo = new StockDemo(stockManager);
+Id 110 is duplicate, please provide different id!
+Product with name Apple iPhone SE already exists, please provide different name!
+demo.runDemo();
+
+Yankov's Stock List
+====================
+
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 0
+103: Google Pixel 4A stock level: 0
+104: Sony Xperia 1 || stock level: 0
+105: Samsung Note 9 stock level: 0
+106: OnePlus 8 Pro stock level: 0
+107: Samsung Galaxy Note 20 Ultra stock level: 0
+108: Motorola Edge Plus stock level: 0
+109: Xiaomi Mi Note 10 stock level: 0
+110: Apple iPhone SE stock level: 0
+
+Delivery:
+101: Samsung Galaxy S20 stock level: 0
+3 Samsung Galaxy S20 has been added on stock!
+101: Samsung Galaxy S20 stock level: 3
+
+102: Apple iPhone 12 stock level: 0
+2 Apple iPhone 12 has been added on stock!
+102: Apple iPhone 12 stock level: 2
+
+103: Google Pixel 4A stock level: 0
+3 Google Pixel 4A has been added on stock!
+103: Google Pixel 4A stock level: 3
+
+104: Sony Xperia 1 || stock level: 0
+5 Sony Xperia 1 || has been added on stock!
+104: Sony Xperia 1 || stock level: 5
+
+105: Samsung Note 9 stock level: 0
+9 Samsung Note 9 has been added on stock!
+105: Samsung Note 9 stock level: 9
+
+106: OnePlus 8 Pro stock level: 0
+5 OnePlus 8 Pro has been added on stock!
+106: OnePlus 8 Pro stock level: 5
+
+107: Samsung Galaxy Note 20 Ultra stock level: 0
+3 Samsung Galaxy Note 20 Ultra has been added on stock!
+107: Samsung Galaxy Note 20 Ultra stock level: 3
+
+108: Motorola Edge Plus stock level: 0
+4 Motorola Edge Plus has been added on stock!
+108: Motorola Edge Plus stock level: 4
+
+109: Xiaomi Mi Note 10 stock level: 0
+1 Xiaomi Mi Note 10 has been added on stock!
+109: Xiaomi Mi Note 10 stock level: 1
+
+110: Apple iPhone SE stock level: 0
+6 Apple iPhone SE has been added on stock!
+110: Apple iPhone SE stock level: 6
+
+Product with id: 10 cannot be found!
+Attempt to restock Samsung Galaxy S20 with a non-positive amount: -1
+
+Selling products:
+101: Samsung Galaxy S20 stock level: 3
+The requested amount of products is more than the available quantity!
+101: Samsung Galaxy S20 stock level: 3
+
+102: Apple iPhone 12 stock level: 2
+The requested amount of products is more than the available quantity!
+102: Apple iPhone 12 stock level: 2
+
+103: Google Pixel 4A stock level: 3
+3 Google Pixel 4A has been sold!
+103: Google Pixel 4A stock level: 0
+
+104: Sony Xperia 1 || stock level: 5
+4 Sony Xperia 1 || has been sold!
+104: Sony Xperia 1 || stock level: 1
+
+105: Samsung Note 9 stock level: 9
+2 Samsung Note 9 has been sold!
+105: Samsung Note 9 stock level: 7
+
+106: OnePlus 8 Pro stock level: 5
+The requested amount of products is more than the available quantity!
+106: OnePlus 8 Pro stock level: 5
+
+107: Samsung Galaxy Note 20 Ultra stock level: 3
+The requested amount of products is more than the available quantity!
+107: Samsung Galaxy Note 20 Ultra stock level: 3
+
+108: Motorola Edge Plus stock level: 4
+2 Motorola Edge Plus has been sold!
+108: Motorola Edge Plus stock level: 2
+
+109: Xiaomi Mi Note 10 stock level: 1
+1 Xiaomi Mi Note 10 has been sold!
+109: Xiaomi Mi Note 10 stock level: 0
+
+110: Apple iPhone SE stock level: 6
+5 Apple iPhone SE has been sold!
+110: Apple iPhone SE stock level: 1
+
+Renamed product name: Samsung Galaxy S20 to New Product Name
+The product`s name cannot be less than 5 symbols!
+The product has not been renamed!
+101: New Product Name stock level: 3
+
+101: New Product Name stock level: 3 has been deleted successfully!
+Product with id: 101 cannot be found!
+
+
+Yankov's Stock List
+====================
+
+102: Apple iPhone 12 stock level: 2
+103: Google Pixel 4A stock level: 0
+104: Sony Xperia 1 || stock level: 1
+105: Samsung Note 9 stock level: 7
+106: OnePlus 8 Pro stock level: 5
+107: Samsung Galaxy Note 20 Ultra stock level: 3
+108: Motorola Edge Plus stock level: 2
+109: Xiaomi Mi Note 10 stock level: 0
+110: Apple iPhone SE stock level: 1
+
+
+Products consisting Apple:
+=====================================
+
+102: Apple iPhone 12 stock level: 2
+110: Apple iPhone SE stock level: 1
+There is no any products consisting Not Exists in their names!
+
+
+Low stock level products list
+=============================
+
+
+103: Google Pixel 4A stock level: 0
+
+104: Sony Xperia 1 || stock level: 1
+
+109: Xiaomi Mi Note 10 stock level: 0
+
+110: Apple iPhone SE stock level: 1

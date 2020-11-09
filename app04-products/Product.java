@@ -3,6 +3,9 @@
  * 
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
+ * 
+ * @modified by Yavor Yankov
+  * @version 03/11/2020
  */
 public class Product {
     // An identifying number for this product.
@@ -21,7 +24,7 @@ public class Product {
     public Product(int id, String name) {
         this.id = id;
         this.name = name;
-        quantity = 0;
+        this.quantity = 0;
     }
 
     /**
@@ -73,7 +76,7 @@ public class Product {
         if (amount > 0) 
         {
             quantity += amount;
-            System.out.println(amount + " " + this.name + " has been added to stock!");
+            System.out.println(amount + " " + this.name + " has been added on stock!");
         } 
         else 
         {
@@ -84,6 +87,8 @@ public class Product {
     /**
      * Sell given amount of these products. An error is reported if there appears to be no
      * stock or the requested amount is more than the amount on stock.
+     * 
+     * @param amount The amount of product to be sold.
      */
     // Test the method... -------------------------------------------------------------------
     public void sell(int amount) 
@@ -109,6 +114,7 @@ public class Product {
             System.out.println("Attempt to sell an out of stock item: " + name);
         }
     }
+    
 
     /**
      * @return The id, name and quantity in stock.
