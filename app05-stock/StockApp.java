@@ -5,7 +5,7 @@
  * print and remove stock products
  *
  * @author Student Name
- * @version 0.1
+ * @version 11/10/2020
  */
 public class StockApp
 {

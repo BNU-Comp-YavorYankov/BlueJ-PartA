@@ -5,7 +5,7 @@ import java.util.HashMap;
  * Command Design Pattern: The Invoker class
  *  
  * @author Yavor Yankov
- * @version Change
+ * @version 11/10/2020
  */
 public class CommandInvoker {
     /**
@@ -56,5 +56,6 @@ public class CommandInvoker {
     private void seedAvailableCommands() 
     {
         this.commands.put("add", new AddProductCommand(this.manager));
+        this.commands.put("remove", new RemoveProductCommand(this.manager));
     }
 }

@@ -19,6 +19,18 @@ public class StockManager
     public StockManager()
     {
         stock = new ArrayList<>();
+
+        // Mock products 
+        this.addProduct(new Product(101, "Samsung Galaxy S20"));
+        this.addProduct(new Product(102, "Apple iPhone 12"));
+        this.addProduct(new Product(103, "Google Pixel 4A"));
+        this.addProduct(new Product(104, "Sony Xperia 1 ||"));
+        this.addProduct(new Product(105, "Samsung Note 9"));
+        this.addProduct(new Product(106, "OnePlus 8 Pro"));
+        this.addProduct(new Product(107, "Samsung Galaxy Note 20 Ultra"));
+        this.addProduct(new Product(108, "Motorola Edge Plus"));
+        this.addProduct(new Product(109, "Xiaomi Mi Note 10"));
+        this.addProduct(new Product(110, "Apple iPhone SE"));
     }
 
     /**
@@ -166,7 +178,7 @@ public class StockManager
         if(product != null)
         {
             this.stock.remove(product);
-            System.out.println(product + " has been deleted successfully!");
+            System.out.println(product + " has been deleted from stock list!");
         }
     }
 

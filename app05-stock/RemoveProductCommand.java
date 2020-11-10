@@ -1,10 +1,10 @@
 /**
- * The command for adding a new product on stock
+ * The command for removing a product from stock list
  * 
  * @author Yavor Yankov
  * @version 10/11/2020
  */
-public class AddProductCommand implements Command 
+public class RemoveProductCommand implements Command
 {
     // The stock manager of the Stock Management Application
     private StockManager manager;
@@ -16,39 +16,22 @@ public class AddProductCommand implements Command
      * 
      * @param manager The manager which is the reciever of the Command Design Pattern
      */
-    public AddProductCommand(StockManager manager) {
+    public RemoveProductCommand(StockManager manager) {
         this.manager = manager;
         this.input = new InputReader();
     }
 
     /**
-     * Execute this command as create a new product and add it on stock.
+     * Execute this command as remove the product from stock list.
      * The method is overridden from Command interface.
      */
     @Override
     public void execute() 
     {
-        Product product = createProduct();
-
-        manager.addProduct(product);
-    }
-
-    /**
-     * Create a new product as use the user input for product id and name.
-     * 
-     * @return The newly created product.
-     */
-    private Product createProduct() 
-    {
-        System.out.println("Add product:");
-
         System.out.print("Id: ");
         // Parse the user input from String to int
         int productId = Integer.parseInt(input.getInput());
-        
-        System.out.print("Name: ");
-        String productName = this.input.getInput();
 
-        return new Product(productId,productName);
+        manager.deleteProduct(productId);
     }
 }

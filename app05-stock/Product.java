@@ -84,7 +84,7 @@ public class Product {
         if (amount > 0) 
         {
             quantity += amount;
-            System.out.println(amount + " " + this.name + " has been added on stock!");
+            System.out.println(amount + " " + this.name + " has been restocked!");
         } 
         else 
         {

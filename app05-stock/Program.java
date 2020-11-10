@@ -13,7 +13,7 @@ public class Program
      * This class creates and runs an instance of
      * the StockApp class
      */
-    public static void main()
+    public static void main(String[] args) 
     {
         app = new StockApp();
         app.run();
