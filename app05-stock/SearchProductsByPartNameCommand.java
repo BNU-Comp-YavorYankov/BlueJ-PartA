@@ -1,10 +1,12 @@
 /**
- * The command for removing a product from stock list
+ * The command for searching and printing a list of products based on 
+ * part of the product name. The part of the product name is provided by
+ * the user input
  * 
  * @author Yavor Yankov
  * @version 10/11/2020
  */
-public class RemoveProductCommand implements Command
+public class SearchProductsByPartNameCommand implements Command
 {
     // The stock manager of the Stock Management Application
     private StockManager manager;
@@ -16,22 +18,22 @@ public class RemoveProductCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public RemoveProductCommand(StockManager manager) {
+    public SearchProductsByPartNameCommand(StockManager manager) {
         this.manager = manager;
         this.input = new InputReader();
     }
 
     /**
-     * Execute this command as remove the product from stock list.
+     * Execute this command as search for products consisting the word provided 
+     * by the user input.
      * The method is overridden from Command interface.
      */
     @Override
     public void execute() 
     {
-        System.out.print("Id: ");
-        // Parse the user input from String to int
-        int productId = Integer.parseInt(this.input.getInput());
+        System.out.print("Part name: ");
+        String partName = this.input.getInput();
 
-        manager.deleteProduct(productId);
+        manager.printProductsWithPartName(partName);
     }
 }
