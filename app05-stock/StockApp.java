@@ -11,17 +11,20 @@ public class StockApp
 {
     // Use to get user input
     private InputReader input;
-    
+    // Command invoker of this application
+    private CommandInvoker commandInvoker;
+
     /**
      * Constructor for objects of class StockApp
      */
     public StockApp()
     {
-        input = new InputReader();
+        this.input = new InputReader();
+        this.commandInvoker = new CommandInvoker();
     }
 
     /**
-     * 
+     * Run the Stock Management Application.
      */
     public void run()
     {
@@ -30,23 +33,23 @@ public class StockApp
     }
     
     /**
-     * 
+     * Get user input and invoke command parser as pass the user input.
      */
     public void getMenuChoice()
     {
-        boolean finished = false;
+        printMenuChoices();
+
+        String choice = input.getInput();
         
-        while(!finished)
+        while(!choice.equals("quit"))
         {
-            printHeading();
+            this.commandInvoker.execute(choice);
+            
             printMenuChoices();
-           
-            String choice = input.getInput();
-            finished = true;
+            choice = input.getInput();
         }
     }
     
-   
     /**
      * Print out a menu of operation choices
      */
@@ -67,7 +70,7 @@ public class StockApp
     {
         System.out.println("******************************");
         System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Student Name");
+        System.out.println("    App05: by Yavor Yankov");
         System.out.println("******************************");
     }
 }
