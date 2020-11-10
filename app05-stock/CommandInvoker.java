@@ -61,5 +61,6 @@ public class CommandInvoker
         this.commands.put("print", new PrintAllProductsCommand(this.manager));
         this.commands.put("search", new SearchProductsByPartNameCommand(this.manager));
         this.commands.put("low-stock", new PrintLowStockLevelProductsCommand(this.manager));
+        this.commands.put("deliver", new DeliverProductCommand(this.manager));
     }
 }
