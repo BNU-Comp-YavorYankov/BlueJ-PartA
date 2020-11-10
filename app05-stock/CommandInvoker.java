@@ -7,7 +7,8 @@ import java.util.HashMap;
  * @author Yavor Yankov
  * @version 11/10/2020
  */
-public class CommandInvoker {
+public class CommandInvoker 
+{
     /**
      * All commands which can be executed 
      * @key Keeps the name of the command
@@ -59,5 +60,6 @@ public class CommandInvoker {
         this.commands.put("remove", new RemoveProductCommand(this.manager));
         this.commands.put("print", new PrintAllProductsCommand(this.manager));
         this.commands.put("search", new SearchProductsByPartNameCommand(this.manager));
+        this.commands.put("low-stock", new PrintLowStockLevelProductsCommand(this.manager));
     }
 }

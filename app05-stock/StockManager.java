@@ -263,7 +263,6 @@ public class StockManager
         if(products.size() > 0)
         {
             for (Product product : products) {
-                System.out.println("");
                 System.out.println(product);
             }
         }

@@ -59,6 +59,7 @@ public class StockApp
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
         System.out.println("    Search:     Print products based on part of the product name");
+        System.out.println("    Low-Stock:  Print products whose stock levels are low");
         System.out.println("    Print:      Print all products");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
