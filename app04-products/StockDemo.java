@@ -15,7 +15,9 @@ public class StockDemo
 {
     // The stock manager.
     private StockManager manager;
+    // The random generator.
     private Random random;
+    
     /**
      * Create a StockManager and populate it with a few
      * sample products.

@@ -22,9 +22,9 @@ public class StockManager
 
     /**
      * Add a product to the list.
+     * 
      * @param item The item to be added.
      */
-    // Test the method... -------------------------------------------------------------------
     public void addProduct(Product item)
     {
         if(isIdExists(item.getID()))
@@ -42,7 +42,9 @@ public class StockManager
     }
 
     /**
-     * Finds the product and rename the existing name with a new one provided from the parameter. 
+     * Finds the product and rename the existing name with 
+     * a new one provided from the parameter.
+     *  
      * @param id The id of the product
      * @param newProductName The new name of the product
      */
@@ -79,9 +81,10 @@ public class StockManager
     /**
      * Locate a product with the given ID, and return how many of this item are in
      * stock. If the ID does not match any product, return zero.
+     *
+     * @return The quantity of the given product in stock.
      * 
      * @param id The ID of the product.
-     * @return The quantity of the given product in stock.
      */
     public int getNumberInStock(int id)
     {
@@ -113,6 +116,8 @@ public class StockManager
     }
     
     /**
+     * Find a product by its id
+     * 
      * @return The product which has same id as parameter`s id.
      * 
      * @param id The id of a product.
@@ -132,6 +137,7 @@ public class StockManager
     /**
      * Sell one of the given item.
      * Show the before and after status of the product.
+     * 
      * @param id The ID of the product being sold.
      * @param amount The amount of the products being sold.
      */
@@ -148,6 +154,7 @@ public class StockManager
 
     /**
      * Find and delete a product from the stock collection
+     * 
      * @param id The id of the product.
      */
     public void deleteProduct(int id)
@@ -162,8 +169,8 @@ public class StockManager
     }
 
     /**
-     * Print details of the given product. If found, its name and stock quantity
-     * will be shown.
+     * Print details of the given product. If found, 
+     * its name and stock quantity will be shown.
      * 
      * @param id The ID of the product to look for.
      */
@@ -254,9 +261,9 @@ public class StockManager
 
     /**
      * Find all products which have same word in their names as from the parameter 
+     * @return The products with a same word in their names
      * 
      * @param partName The part of the product name
-     * @return The products with a same word in their names
      */
     private ArrayList<Product> findProductsByPartName(String partName)
     {
@@ -283,6 +290,7 @@ public class StockManager
 
     /**
      * Get all products whose stock level is low
+     * 
      * @return The products with low stock level
      */
     private ArrayList<Product> getLowStockLevelProducts() 
@@ -298,7 +306,8 @@ public class StockManager
     }
 
     /**
-     * @return Is id exists in the stock collection
+     * Is id exists in the stock collection
+     * @return Is id exists in the stock collection as return true or false
      * 
      * @param productId The id of a product
      */
@@ -314,7 +323,8 @@ public class StockManager
     }
 
     /**
-     * @return Is name exists in the stock collection
+     * Is name exists in the stock collection
+     * @return Is name exists in the stock collection as return true or false
      * 
      * @param productName The name of a product 
      */

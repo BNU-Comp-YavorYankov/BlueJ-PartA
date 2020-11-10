@@ -43,9 +43,9 @@ public class Product {
 
     /**
      * Set a name of this product
+     * 
      * @param newName The new name of this product 
      */
-    // Test the method... -------------------------------------------------------------------
     public void setName(String newName)
     {
         if(newName.length() < 5)
@@ -59,6 +59,8 @@ public class Product {
     }
 
     /**
+     * The quantity of this product.
+     * 
      * @return The quantity in stock.
      */
     public int getQuantity() {
@@ -66,11 +68,11 @@ public class Product {
     }
 
     /**
-     * Restock with the given amount of this product. The current quantity is
-     * incremented by the given amount.
+     * Restock with the given amount of this product. 
+     * The current quantity is incremented by the given amount.
      * 
-     * @param amount The number of new items added to the stock. This must be
-     *               greater than zero.
+     * @param amount The number of new items added to the stock. 
+     * This must be greater than zero.
      */
     public void increaseQuantity(int amount) {
         if (amount > 0) 
@@ -85,12 +87,12 @@ public class Product {
     }
 
     /**
-     * Sell given amount of these products. An error is reported if there appears to be no
+     * Sell given amount of these products. 
+     * An error is reported if there appears to be no
      * stock or the requested amount is more than the amount on stock.
      * 
      * @param amount The amount of product to be sold.
      */
-    // Test the method... -------------------------------------------------------------------
     public void sell(int amount) 
     {
         if (quantity > 0) 
@@ -117,6 +119,9 @@ public class Product {
     
 
     /**
+     * Override toString method as return string with
+     * particular pattern.
+     * 
      * @return The id, name and quantity in stock.
      */
     @Override
