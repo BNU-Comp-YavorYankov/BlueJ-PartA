@@ -14,7 +14,7 @@ public class AddProductCommand implements Command
     /**
      * The constructor of this command
      * 
-     * @param manager The manager which is the reciever of the Command Design Pattern
+     * @param manager The manager which is the reciever in the Command Design Pattern
      */
     public AddProductCommand(StockManager manager) {
         this.manager = manager;

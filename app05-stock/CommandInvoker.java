@@ -57,5 +57,6 @@ public class CommandInvoker {
     {
         this.commands.put("add", new AddProductCommand(this.manager));
         this.commands.put("remove", new RemoveProductCommand(this.manager));
+        this.commands.put("print -all", new PrintAllProductsCommand(this.manager));
     }
 }

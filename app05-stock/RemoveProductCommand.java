@@ -14,7 +14,7 @@ public class RemoveProductCommand implements Command
     /**
      * The constructor of this command
      * 
-     * @param manager The manager which is the reciever of the Command Design Pattern
+     * @param manager The manager which is the reciever in the Command Design Pattern
      */
     public RemoveProductCommand(StockManager manager) {
         this.manager = manager;
