@@ -33,8 +33,9 @@ public class InputReader
     public String getString()
     {
         System.out.print("> ");         // print prompt
-
-        return this.reader.nextLine();
+        String input = this.reader.nextLine();
+        
+        return input;
     }
 
     /**
@@ -45,8 +46,10 @@ public class InputReader
      */
     public int getInt()
     {
-        System.out.print("> ");         // print prompt
-
-        return this.reader.nextInt();
+        String stringInput = getString();
+        // Convert the user input to integer
+        int intInput = Integer.parseInt(stringInput);
+        
+        return intInput;
     }
 }
