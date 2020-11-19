@@ -37,5 +37,4 @@ public class DeliverProductCommand implements Command
 
         manager.delivery(productId, amount);
     }
-    
 }

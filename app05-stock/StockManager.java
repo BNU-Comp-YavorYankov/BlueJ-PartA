@@ -20,7 +20,7 @@ public class StockManager
     {
         stock = new ArrayList<>();
 
-        // Mock products 
+        // Mock products must be deleted on final version
         this.addProduct(new Product(101, "Samsung Galaxy S20"));
         this.addProduct(new Product(102, "Apple iPhone 12"));
         this.addProduct(new Product(103, "Google Pixel 4A"));
@@ -183,6 +183,28 @@ public class StockManager
     }
 
     /**
+     * Re-stock all the low stock items up to a set minimum level.
+     */
+    public void restockLowStockLevelProducts()
+    {
+        System.out.println();
+        System.out.println("Re-stock low stock level products");
+        System.out.println("=================================");
+        System.out.println();
+
+        ArrayList<Product> lowStockLevelProducts = getLowStockLevelProducts();
+        
+        if (lowStockLevelProducts.size() > 0) 
+        {
+            for (Product product : lowStockLevelProducts) 
+            {
+                product.increaseQuantity(1);
+                System.out.println(product);
+            }    
+        }
+    }
+
+    /**
      * Print details of the given product. If found, 
      * its name and stock quantity will be shown.
      * 
@@ -266,10 +288,6 @@ public class StockManager
                 System.out.println(product);
             }
         }
-        else
-        {
-            System.out.println("There is no any products with low stock level!");
-        }
     }
 
     /**
@@ -309,12 +327,19 @@ public class StockManager
     private ArrayList<Product> getLowStockLevelProducts() 
     {
         ArrayList<Product> result = new ArrayList<Product>();
+        
         for (Product product : stock) {
             if(product.getQuantity() <= 1)
             {
                 result.add(product);
             }
         }
+        
+        if(result.size() == 0)
+        {
+            System.out.println("There is no low stock level products.");
+        }
+
         return result;
     }
 
@@ -351,5 +376,4 @@ public class StockManager
         }
         return false;
     }
-
 }

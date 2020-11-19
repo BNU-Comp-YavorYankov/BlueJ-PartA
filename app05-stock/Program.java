@@ -1,9 +1,11 @@
 
 /**
- * Write a description of class Program here.
+ * Program class is the starting point of the Product Stock Application.
+ * It create an object of the StockApp class 
+ * and invokes the run method of the StockApp class. 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Yavor Yankov
+ * @version 19/11/2020
  */
 public class Program
 {
@@ -13,7 +15,7 @@ public class Program
      * This class creates and runs an instance of
      * the StockApp class
      */
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         app = new StockApp();
         app.run();
