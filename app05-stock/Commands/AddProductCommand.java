@@ -1,3 +1,5 @@
+package Commands;
+
 /**
  * The command for adding a new product on stock
  * 
