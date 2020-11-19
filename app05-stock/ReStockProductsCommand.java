@@ -4,7 +4,7 @@
  * @author Yavor Yankov
  * @version 19/11/2020
  */
-public class ReStockCommand implements Command 
+public class ReStockProductsCommand implements Command 
 {
     // The stock manager of the Stock Management Application
     private StockManager manager;
@@ -14,7 +14,7 @@ public class ReStockCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public ReStockCommand(StockManager manager) 
+    public ReStockProductsCommand(StockManager manager) 
     {
         this.manager = manager;
     }

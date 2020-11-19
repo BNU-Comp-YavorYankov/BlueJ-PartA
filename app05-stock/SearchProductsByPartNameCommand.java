@@ -32,7 +32,7 @@ public class SearchProductsByPartNameCommand implements Command
     public void execute() 
     {
         System.out.print("Part name: ");
-        String partName = this.input.getInput();
+        String partName = this.input.getString();
 
         manager.printProductsWithPartName(partName);
     }

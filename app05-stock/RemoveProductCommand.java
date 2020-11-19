@@ -29,8 +29,7 @@ public class RemoveProductCommand implements Command
     public void execute() 
     {
         System.out.print("Id: ");
-        // Parse the user input from String to int
-        int productId = Integer.parseInt(this.input.getInput());
+        int productId = this.input.getInt();
 
         manager.deleteProduct(productId);
     }

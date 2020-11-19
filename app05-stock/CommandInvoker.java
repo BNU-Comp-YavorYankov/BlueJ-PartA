@@ -63,6 +63,6 @@ public class CommandInvoker
         this.commands.put("low-stock", new PrintLowStockLevelProductsCommand(this.manager));
         this.commands.put("deliver", new DeliverProductCommand(this.manager));
         this.commands.put("sell", new SellProductCommand(this.manager));
-        this.commands.put("re-stock", new ReStockCommand(this.manager));
+        this.commands.put("re-stock", new ReStockProductsCommand(this.manager));
     }
 }

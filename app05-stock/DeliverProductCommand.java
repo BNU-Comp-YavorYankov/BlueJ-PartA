@@ -29,11 +29,10 @@ public class DeliverProductCommand implements Command
     public void execute() 
     {
         System.out.print("Id: ");
-        // Parse the user input from String to int
-        int productId = Integer.parseInt(this.input.getInput());
+        int productId = this.input.getInt();
 
         System.out.print("Amount: ");
-        int amount = Integer.parseInt(this.input.getInput());
+        int amount = this.input.getInt();
 
         manager.delivery(productId, amount);
     }

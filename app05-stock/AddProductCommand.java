@@ -43,11 +43,10 @@ public class AddProductCommand implements Command
         System.out.println("Add product:");
 
         System.out.print("Id: ");
-        // Parse the user input from String to int
-        int productId = Integer.parseInt(input.getInput());
+        int productId = this.input.getInt();
         
         System.out.print("Name: ");
-        String productName = this.input.getInput();
+        String productName = this.input.getString();
 
         return new Product(productId,productName);
     }

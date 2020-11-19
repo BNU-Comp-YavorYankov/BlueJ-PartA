@@ -39,14 +39,14 @@ public class StockApp
     {
         printMenuChoices();
 
-        String choice = input.getInput();
+        String choice = input.getString();
         
         while(!choice.equals("quit"))
         {
             this.commandInvoker.execute(choice);
             
             printMenuChoices();
-            choice = input.getInput();
+            choice = input.getString();
         }
     }
     
