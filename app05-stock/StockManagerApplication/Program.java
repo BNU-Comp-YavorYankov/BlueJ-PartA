@@ -1,3 +1,5 @@
+package StockManagerApplication;
+
 /**
  * Program class is the starting point of the Product Stock Application.
  * It create an object of the StockApp class 

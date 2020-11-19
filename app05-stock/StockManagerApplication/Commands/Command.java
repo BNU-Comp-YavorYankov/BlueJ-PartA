@@ -1,3 +1,5 @@
+package StockManagerApplication.Commands;
+
 /**
  * Command interface is a contract for the inherited classes.
  * 

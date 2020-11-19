@@ -1,3 +1,5 @@
+package StockManagerApplication;
+
 import java.util.HashMap;
 
 /**

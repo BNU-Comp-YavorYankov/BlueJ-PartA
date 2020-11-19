@@ -1,3 +1,4 @@
+package StockManagerApplication;
 
 /**
  * This app provides a user interface to the

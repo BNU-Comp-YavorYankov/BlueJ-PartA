@@ -1,3 +1,4 @@
+package StockManagerApplication;
 
 /**
  * Model some details of a product sold by a company.

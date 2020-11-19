@@ -1,10 +1,12 @@
+package StockManagerApplication.Commands;
+
 /**
- * The command for delivering a product
+ * The command for removing a product from stock list
  * 
  * @author Yavor Yankov
  * @version 10/11/2020
  */
-public class DeliverProductCommand implements Command
+public class RemoveProductCommand implements Command
 {
     // The stock manager of the Stock Management Application
     private StockManager manager;
@@ -16,13 +18,13 @@ public class DeliverProductCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public DeliverProductCommand(StockManager manager) {
+    public RemoveProductCommand(StockManager manager) {
         this.manager = manager;
         this.input = new InputReader();
     }
 
     /**
-     * Execute this command as deliver a product and increase its quantity.
+     * Execute this command as remove the product from stock list.
      * The method is overridden from Command interface.
      */
     @Override
@@ -31,9 +33,6 @@ public class DeliverProductCommand implements Command
         System.out.print("Id: ");
         int productId = this.input.getInt();
 
-        System.out.print("Amount: ");
-        int amount = this.input.getInt();
-
-        manager.delivery(productId, amount);
+        manager.deleteProduct(productId);
     }
 }

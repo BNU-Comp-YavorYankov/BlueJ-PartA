@@ -1,10 +1,12 @@
+package StockManagerApplication.Commands;
+
 /**
- * The command for printing all products whose stock levels are low
+ * The command for re-stock all the low stock items up to a set minimum level
  * 
  * @author Yavor Yankov
- * @version 10/11/2020
+ * @version 19/11/2020
  */
-public class PrintLowStockLevelProductsCommand implements Command
+public class ReStockProductsCommand implements Command 
 {
     // The stock manager of the Stock Management Application
     private StockManager manager;
@@ -14,18 +16,18 @@ public class PrintLowStockLevelProductsCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public PrintLowStockLevelProductsCommand(StockManager manager) {
+    public ReStockProductsCommand(StockManager manager) 
+    {
         this.manager = manager;
     }
 
     /**
-     * Execute this command as print a list of products with low stock level.
+     * Execute this command as re-stock all the low stock items up to a set minimum level
      * The method is overridden from Command interface.
      */
     @Override
     public void execute() 
     {
-        manager.printLowStockLevelProducts();
+        manager.restockLowStockLevelProducts();
     }
-    
 }
