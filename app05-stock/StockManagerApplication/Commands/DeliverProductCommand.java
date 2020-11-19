@@ -1,5 +1,7 @@
 package StockManagerApplication.Commands;
 
+import StockManagerApplication.*;
+
 /**
  * The command for delivering a product
  * 

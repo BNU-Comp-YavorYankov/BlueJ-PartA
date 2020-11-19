@@ -1,5 +1,7 @@
 package StockManagerApplication.Commands;
 
+import StockManagerApplication.*;
+
 /**
  * The command for adding a new product on stock
  * 

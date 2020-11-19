@@ -1,5 +1,7 @@
 package StockManagerApplication.Commands;
 
+import StockManagerApplication.*;
+
 /**
  * The command for searching and printing a list of products based on 
  * part of the product name. The part of the product name is provided by
