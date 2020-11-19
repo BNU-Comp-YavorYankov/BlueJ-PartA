@@ -42,7 +42,7 @@ public class StockApp
 
         String choice = input.getString();
         
-        while(!choice.equals("quit"))
+        while(true)
         {
             this.commandInvoker.execute(choice);
             

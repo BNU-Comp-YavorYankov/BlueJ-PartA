@@ -2,6 +2,7 @@ package StockManagerApplication;
 
 import java.util.HashMap;
 import StockManagerApplication.Commands.*;
+
 /**
  * CommandInvoke is responsible to parse the user input and execute the proper command
  * Command Design Pattern: The Invoker class
@@ -66,5 +67,6 @@ public class CommandInvoker
         this.commands.put("deliver", new DeliverProductCommand(this.manager));
         this.commands.put("sell", new SellProductCommand(this.manager));
         this.commands.put("re-stock", new ReStockProductsCommand(this.manager));
+        this.commands.put("quit", new QuitCommand());
     }
 }
