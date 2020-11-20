@@ -18,7 +18,8 @@ public class PrintLowStockLevelProductsCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public PrintLowStockLevelProductsCommand(StockManager manager) {
+    public PrintLowStockLevelProductsCommand(StockManager manager) 
+    {
         this.manager = manager;
     }
 

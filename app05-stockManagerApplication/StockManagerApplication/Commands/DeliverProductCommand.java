@@ -20,7 +20,8 @@ public class DeliverProductCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public DeliverProductCommand(StockManager manager) {
+    public DeliverProductCommand(StockManager manager) 
+    {
         this.manager = manager;
         this.input = new InputReader();
     }

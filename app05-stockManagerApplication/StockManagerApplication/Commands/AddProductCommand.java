@@ -20,7 +20,8 @@ public class AddProductCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public AddProductCommand(StockManager manager) {
+    public AddProductCommand(StockManager manager) 
+    {
         this.manager = manager;
         this.input = new InputReader();
     }
@@ -51,7 +52,7 @@ public class AddProductCommand implements Command
         
         System.out.print("Name: ");
         String productName = this.input.getString();
-
+        
         return new Product(productId,productName);
     }
 }

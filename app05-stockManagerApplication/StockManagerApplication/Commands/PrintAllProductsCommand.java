@@ -18,7 +18,8 @@ public class PrintAllProductsCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public PrintAllProductsCommand(StockManager manager) {
+    public PrintAllProductsCommand(StockManager manager) 
+    {
         this.manager = manager;
     }
 

@@ -22,7 +22,8 @@ public class SearchProductsByPartNameCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public SearchProductsByPartNameCommand(StockManager manager) {
+    public SearchProductsByPartNameCommand(StockManager manager) 
+    {
         this.manager = manager;
         this.input = new InputReader();
     }

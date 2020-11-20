@@ -20,7 +20,8 @@ public class SellProductCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public SellProductCommand(StockManager manager) {
+    public SellProductCommand(StockManager manager) 
+    {
         this.manager = manager;
         this.input = new InputReader();
     }

@@ -9,7 +9,8 @@ package StockManagerApplication;
  * @modified by Yavor Yankov
  * @version Change
  */
-public class Product {
+public class Product 
+{
     // An identifying number for this product.
     private int id;
     // The name of this product.

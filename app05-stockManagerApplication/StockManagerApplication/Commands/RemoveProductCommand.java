@@ -20,7 +20,8 @@ public class RemoveProductCommand implements Command
      * 
      * @param manager The manager which is the reciever in the Command Design Pattern
      */
-    public RemoveProductCommand(StockManager manager) {
+    public RemoveProductCommand(StockManager manager) 
+    {
         this.manager = manager;
         this.input = new InputReader();
     }

@@ -30,18 +30,25 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        if(isIdExists(item.getID()))
+        if(item.getName().equals(""))
         {
-            System.out.println("Id "+ item.getID() +" is duplicate, please provide different id!");
-        }
-        else if(isNameExists(item.getName()))
-        {
-            System.out.println("Product with name " + item.getName() + " already exists, please provide different name!");
+            System.out.println("Product name cannot be empty!");
         }
         else
         {
-            stock.add(item);
-            System.out.println(item + " has been added on stock.");
+            if(isIdExists(item.getID()))
+            {
+                System.out.println("Id "+ item.getID() +" is duplicate, please provide different id!");
+            }
+            else if(isNameExists(item.getName()))
+            {
+                System.out.println("Product with name " + item.getName() + " already exists, please provide different name!");
+            }
+            else
+            {
+                stock.add(item);
+                System.out.println(item + " has been added on stock.");
+            }
         }
     }
 
@@ -128,7 +135,8 @@ public class StockManager
      */
     public Product findProductById(int id)
     {
-        for (Product product : stock) {
+        for (Product product : stock) 
+        {
             if(product.getID() == id)
             {
                 return product;
@@ -249,7 +257,9 @@ public class StockManager
             System.out.println("Products consisting " + partName + ":");
             System.out.println("=====================================");
             System.out.println();
-            for (Product product : products) {
+
+            for (Product product : products) 
+            {
                 System.out.println(product);
             }
         }
@@ -274,7 +284,8 @@ public class StockManager
 
         if(products.size() > 0)
         {
-            for (Product product : products) {
+            for (Product product : products) 
+            {
                 System.out.println(product);
             }
         }
@@ -291,7 +302,8 @@ public class StockManager
         ArrayList<Product> result = new ArrayList<Product>();
             
         //Iterate all the products in stock collection
-        for (Product product : stock) {
+        for (Product product : stock) 
+        {
             // Get the product name then split it by space
             String[] productNameWords = product
                 .getName()
@@ -318,7 +330,8 @@ public class StockManager
     {
         ArrayList<Product> result = new ArrayList<Product>();
         
-        for (Product product : stock) {
+        for (Product product : stock)
+        {
             if(product.getQuantity() <= 1)
             {
                 result.add(product);
@@ -341,7 +354,8 @@ public class StockManager
      */
     private boolean isIdExists(int productId) 
     {
-        for (Product product : stock) {
+        for (Product product : stock) 
+        {
             if(product.getID() == productId)
             {
                 return true;
@@ -358,7 +372,8 @@ public class StockManager
      */
     private boolean isNameExists(String productName) 
     {
-        for (Product product : stock) {
+        for (Product product : stock) 
+        {
             if(product.getName().equals(productName))
             {
                 return true;
