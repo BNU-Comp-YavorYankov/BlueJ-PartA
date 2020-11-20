@@ -1,0 +1,143 @@
+StockManagerApplication.Program.main({ });
+******************************
+ Stock Management Application 
+    App05: by Yavor Yankov
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> add
+Add product:
+Id: > 111
+Name: > Samsung Galaxy S10
+111: Samsung Galaxy S10 stock level: 0 has been added on stock.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> add
+Add product:
+Id: > 112
+Name: > Samsung Galaxy S20
+112: Samsung Galaxy S20 stock level: 0 has been added on stock.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> add
+Add product:
+Id: > 113
+Name: > Apple iPhone 11
+113: Apple iPhone 11 stock level: 0 has been added on stock.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> add
+Add product:
+Id: > 114
+Name: > Apple iPhone 12
+114: Apple iPhone 12 stock level: 0 has been added on stock.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> add
+Add product:
+Id: > 115
+Name: > Motorola G9 Plus
+115: Motorola G9 Plus stock level: 0 has been added on stock.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> add
+Add product:
+Id: > 103
+Name: > New Product
+103: New Product stock level: 0 has been added on stock.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> add
+Add product:
+Id: > 103
+Name: > New Product
+Id 103 is duplicate, please provide different id!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> add
+Add product:
+Id: > 116
+Name: > 
+Product name cannot be empty!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program

@@ -1,0 +1,165 @@
+> remove
+Id: > 113
+113: Apple iPhone 11 stock level: 0 has been deleted from stock list!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> remove
+Id: > 203
+Product with id: 203 cannot be found!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> print
+
+Yankov's Stock List
+====================
+
+111: Samsung Galaxy S10 stock level: 0
+112: Samsung Galaxy S20 stock level: 0
+114: Apple iPhone 12 stock level: 0
+115: Motorola G9 Plus stock level: 0
+103: New Product stock level: 0
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> deliver
+Id: > 112
+Amount: > 8
+8 Samsung Galaxy S20 has been restocked!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> deliver
+Id: > 112
+Amount: > -4
+Attempt to restock Samsung Galaxy S20 with a non-positive amount: -4
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> sell
+Id: > 112
+Amount: > 2
+2 Samsung Galaxy S20 has been sold!
+112: Samsung Galaxy S20 stock level: 6
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> sell
+Id: > 112
+Amount: > 10
+The requested amount of products is more than the available quantity!
+112: Samsung Galaxy S20 stock level: 6
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> sell
+Id: > 112
+Amount: > -2
+Amount cannot be less than zero!
+112: Samsung Galaxy S20 stock level: 6
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> search
+Part name: > Samsung
+
+Products consisting Samsung:
+=====================================
+
+111: Samsung Galaxy S10 stock level: 0
+112: Samsung Galaxy S20 stock level: 6
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
+
+> low-stock
+
+Low stock level products list
+=============================
+
+111: Samsung Galaxy S10 stock level: 0
+114: Apple iPhone 12 stock level: 0
+115: Motorola G9 Plus stock level: 0
+103: New Product stock level: 0
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of product
+    Re-Stock:   Re-stock all the low stock products up to a set minimum level
+    Search:     Print products based on part of the product name
+    Low-Stock:  Print products whose stock levels are low
+    Print:      Print all products
+    Quit:       Quit the program
