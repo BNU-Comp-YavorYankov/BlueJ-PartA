@@ -5,7 +5,7 @@ package StockManagerApplication;
  * stock manager so that users can add, edit,
  * print and remove stock products
  *
- * @author Student Name
+ * @author Yavor Yankov
  * @version 11/10/2020
  */
 public class StockApp

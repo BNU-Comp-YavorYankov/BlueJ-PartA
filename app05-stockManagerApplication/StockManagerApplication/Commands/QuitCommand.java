@@ -5,7 +5,7 @@ package StockManagerApplication.Commands;
  * terminating running Java virtual machine.
  * 
  * @author Yavor Yankov
- * @version 10/11/2020
+ * @version 19/11/2020
  */
 public class QuitCommand implements Command
 {

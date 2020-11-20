@@ -4,7 +4,7 @@ package StockManagerApplication.Commands;
  * Command interface is a contract for the inherited classes.
  * 
  * @author Yavor Yankov
- * @version Change
+ * @version 20/11/2020
  */
 public interface Command 
 {
