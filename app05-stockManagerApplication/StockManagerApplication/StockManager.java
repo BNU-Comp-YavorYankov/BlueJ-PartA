@@ -371,7 +371,7 @@ public class StockManager
     private boolean isNameExists(String productName) 
     {
         for (Product product : stock) {
-            if(product.getName() == productName)
+            if(product.getName().equals(productName))
             {
                 return true;
             }
