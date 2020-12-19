@@ -1,6 +1,6 @@
 package commands;
 
-import java.util.Scanner;
+import utilities.InputReader;
 
 /**
  * This class is part of the "World of Zuul" application. 
@@ -17,11 +17,14 @@ import java.util.Scanner;
  * 
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
+ * 
+ * @modified by Yavor Yankov
+ * @version 19/12/2020
  */
 public class Parser 
 {
     private CommandWords commands;  // holds all valid command words
-    private Scanner reader;         // source of command input
+    private InputReader reader;     // source of command input
 
     /**
      * Create a parser to read from the terminal window.
@@ -29,7 +32,7 @@ public class Parser
     public Parser() 
     {
         commands = new CommandWords();
-        reader = new Scanner(System.in);
+        reader = new InputReader();
     }
 
     /**
@@ -37,26 +40,18 @@ public class Parser
      */
     public Command getCommand() 
     {
-        String inputLine;   // will hold the full input line
-        String word1 = null;
+        // hold the words from the user input
+        String[] inputWords = reader
+            .getString()
+            .split(" ");   
+        
+        String word1 = inputWords[0];
         String word2 = null;
 
-        System.out.print("> ");     // print prompt
-
-        inputLine = reader.nextLine();
-
-        // Find up to two words on the line.
-        Scanner tokenizer = new Scanner(inputLine);
-        
-        if(tokenizer.hasNext()) 
+        // Chech is there any other words
+        if(inputWords.length > 1)
         {
-            word1 = tokenizer.next();      // get first word
-        
-            if(tokenizer.hasNext()) 
-            {
-                word2 = tokenizer.next();      // get second word
-                // note: we just ignore the rest of the input line.
-            }
+            word2 = inputWords[1];
         }
 
         return new Command(commands.getCommandWord(word1), word2);
