@@ -5,7 +5,7 @@
  * @author Yavor Yankov
  * @version 19/12/2020
  */
-public class Program
+public class App
 {
     /**
      * This class creates and runs an instance of
