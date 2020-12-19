@@ -1,4 +1,4 @@
-package utilities;
+package commands;
 
 import java.util.Scanner;
 
