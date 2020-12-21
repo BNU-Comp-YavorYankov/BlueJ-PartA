@@ -6,6 +6,9 @@ package commands;
  * 
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
+ * 
+ * @modified by Yavor Yankov
+ * @version 21/12/2020
  */
 public enum CommandWord
 {
@@ -28,6 +31,7 @@ public enum CommandWord
     /**
      * @return The command word as a string.
      */
+    @Override
     public String toString()
     {
         return commandString;
