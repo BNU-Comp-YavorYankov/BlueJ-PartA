@@ -1,4 +1,4 @@
-package commands;
+package main.commands;
 
 /**
  * Command interface is a contract for the inherited classes.

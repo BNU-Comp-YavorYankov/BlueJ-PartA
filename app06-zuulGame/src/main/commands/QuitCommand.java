@@ -1,6 +1,6 @@
-package commands;
+package main.commands;
 
-import utilities.InputReader;
+import main.utilities.InputReader;
 
 /**
  * The command exits current program by terminating running Java virtual
