@@ -1,6 +1,6 @@
 package commands;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 /**
  * The command prints out all possible commands.
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class HelpCommand implements Command
 {
     // All known commands
-    private ArrayList<String> commands;
+    private Set<String> commands;
 
     /**
      * The constructor which recieve the commands from
@@ -19,7 +19,7 @@ public class HelpCommand implements Command
      * 
      * @param commands all known commands
      */
-    public HelpCommand(ArrayList<String> commands) 
+    public HelpCommand(Set<String> commands) 
     {
         this.commands = commands;
     }
@@ -29,7 +29,13 @@ public class HelpCommand implements Command
      * The method is overridden from Command interface.
      */
     @Override
-    public void execute() {
-        
+    public void execute() 
+    {
+        System.out.println("You are lost. You are alone. You wander");
+        System.out.println("around at the university.");
+        System.out.println();
+        System.out.println("Your command words are:");
+        // Creates a new string with all commands and specified delimiter
+        System.out.println(String.join(" ", this.commands));
     }
 }
