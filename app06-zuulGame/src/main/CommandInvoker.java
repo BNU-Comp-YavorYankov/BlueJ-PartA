@@ -41,10 +41,15 @@ public class CommandInvoker
 
     /**
      *  Main play routine. Loops until end of play.
+     *  Add new player into the game.
      */
     public void run() 
     {            
         this.game.printWelcome();
+
+        addPlayer();
+
+        this.game.printCurrentRoomLongDescription();
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the user run quit command and confirm it.
@@ -118,5 +123,15 @@ public class CommandInvoker
     private Set<String> getCommandsNames()
     {
         return this.commands.keySet();
+    }
+
+    /**
+     * Add new player into the game as
+     * creates new AddPlayerCommand and executes it.
+     */
+    private void addPlayer()
+    {
+        Command command = new AddPlayerCommand(this.game);
+        command.execute();        
     }
 }

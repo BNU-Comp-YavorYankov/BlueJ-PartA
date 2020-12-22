@@ -1,5 +1,6 @@
 package main;
 
+import main.models.Player;
 import main.models.Room;
 
 /**
@@ -20,7 +21,8 @@ import main.models.Room;
 public class Game 
 {
     private Room currentRoom; // the room where the player is
-        
+    private Player player;    // the player of this game
+
     /**
      * Create the game and initialise its external map.
      */
@@ -48,6 +50,16 @@ public class Game
     public void setCurrentRoom(Room nextRoom)
     {
         this.currentRoom = nextRoom;
+    }
+
+    /**
+     * Sets the player of this game
+     * 
+     * @param player of this game
+     */
+    public void setPlayer(Player player) 
+    {
+        this.player = player;
     }
 
     /**
@@ -91,6 +103,13 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
-        System.out.println(currentRoom.getLongDescription());
     }
+
+    /**
+     * Print out the current room long description
+     */
+    public void printCurrentRoomLongDescription() 
+    {
+        System.out.println(currentRoom.getLongDescription());
+	}
 }
