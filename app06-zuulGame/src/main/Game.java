@@ -2,6 +2,7 @@ package main;
 
 import main.models.Player;
 import main.models.Location;
+import main.models.Map;
 
 /**
  * This class is the main class of the "World of Zuul" application. "World of
@@ -21,15 +22,17 @@ import main.models.Location;
 public class Game 
 {
     private Location currentLocation; // the location where the player is
-    private Player player;    // the player of this game
+    private Player player;            // the player of this game
+    private Map map;                  // the map of this game
 
     /**
-     * Create the game and initialise its external map.
+     * Create the game and initialise its external map
+     * and current location.
      */
     public Game() 
     {
-        createRooms();
-        //this.map = new Map();
+        this.map = new Map();
+        this.currentLocation = this.map.getOutside();
     }
 
     /**
@@ -66,37 +69,6 @@ public class Game
     public void setPlayer(Player player) 
     {
         this.player = player;
-    }
-
-    /**
-     * Create all the rooms and link their exits together.
-     */
-    private void createRooms()
-    {
-        Room outside, theater, pub, lab, office;
-      
-        // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
-        
-        // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
-
-        theater.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
-
-        this.currentLocation = outside;  // start game outside
     }
 
     /**
