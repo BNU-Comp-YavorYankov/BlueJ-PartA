@@ -31,7 +31,7 @@ public class Player
      */
     public Player(String name)
     {
-        this.name = name;
+        this.setName(name);
         this.energy = 100;
         this.score = 0;
     }
@@ -45,10 +45,18 @@ public class Player
     }
 
     /**
+     * The player name can be set only throught the constructor
+     * and cannot be changed afterwards.
+     * 
      * @param newName of this player
      */
-    public void setName(String newName) 
+    private void setName(String newName) 
     {
+        if(newName.length() < 3)
+        {
+            throw new IllegalArgumentException("Player name cannot be less than 3 symbols!");
+        }
+        
         this.name = newName;
     }
 
