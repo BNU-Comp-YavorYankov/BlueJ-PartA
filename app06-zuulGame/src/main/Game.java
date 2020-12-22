@@ -1,7 +1,7 @@
 package main;
 
 import main.models.Player;
-import main.models.Room;
+import main.models.Location;
 
 /**
  * This class is the main class of the "World of Zuul" application. "World of
@@ -20,7 +20,7 @@ import main.models.Room;
  */
 public class Game 
 {
-    private Room currentRoom; // the room where the player is
+    private Location currentLocation; // the location where the player is
     private Player player;    // the player of this game
 
     /**
@@ -33,13 +33,21 @@ public class Game
     }
 
     /**
-     * It returns the room where the player is.
-     * 
-     * @return current room
+     * @return current location
      */
-    public Room getCurrentRoom()
+    public Location getCurrentLocation()
     {
-        return this.currentRoom;
+        return this.currentLocation;
+    }
+
+    /**
+     * Set new location where the player will be.
+     *  
+     * @param nextLocation the new location where the player will go
+     */
+    public void setCurrentLocation(Location nextLocation)
+    {
+        this.currentLocation = nextLocation;
     }
 
     /**
@@ -48,16 +56,6 @@ public class Game
     public Player getPlayer() 
     {
         return this.player;    
-    }
-
-    /**
-     * Set new location where the player will be.
-     *  
-     * @param nextRoom the new location where the player will go
-     */
-    public void setCurrentRoom(Room nextRoom)
-    {
-        this.currentRoom = nextRoom;
     }
 
     /**
@@ -98,7 +96,7 @@ public class Game
 
         office.setExit("west", lab);
 
-        currentRoom = outside;  // start game outside
+        this.currentLocation = outside;  // start game outside
     }
 
     /**
@@ -114,10 +112,10 @@ public class Game
     }
 
     /**
-     * Print out the current room long description
+     * Print out the current location long description
      */
-    public void printCurrentRoomLongDescription() 
+    public void printCurrentLocationLongDescription() 
     {
-        System.out.println(currentRoom.getLongDescription());
+        System.out.println(this.currentLocation.getLongDescription());
 	}
 }

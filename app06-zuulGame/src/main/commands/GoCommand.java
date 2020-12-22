@@ -1,12 +1,12 @@
 package main.commands;
 
 import main.*;
-import main.models.Room;
+import main.models.Location;
 
 /**
  * The command execution change the room where player is.
  * 
- * The way it works is: The constructor recieves the current game instance.
+ * The way it works is - The constructor recieves the current game instance.
  * Command invoker invokes the setDirection method as set the direction
  * where the player tries to go.
  * Then execute method checks is the direction filed null, empty or valid direction,
@@ -50,27 +50,27 @@ public class GoCommand implements Command
     {
         if(this.direction == null || 
             this.direction.isEmpty() || 
-            !isDirection())
+            !isDirectionValid())
         {
             System.out.println("Go where?");
             return;
         }
 
         // Try to leave current room.
-        Room nextRoom = this.game
-            .getCurrentRoom()
+        Location nextLocation = this.game
+            .getCurrentLocation()
             .getExit(this.direction);
 
-        if (nextRoom == null) 
+        if (nextLocation == null) 
         {
             System.out.println("There is no door!");
         }
         else
         {
-            this.game.setCurrentRoom(nextRoom);
+            this.game.setCurrentLocation(nextLocation);
             
             System.out.println(this.game
-                .getCurrentRoom()
+                .getCurrentLocation()
                 .getLongDescription());
         }
     }
@@ -78,7 +78,7 @@ public class GoCommand implements Command
     /**
      * @return is the direction valid
      */
-    private boolean isDirection() 
+    private boolean isDirectionValid() 
     {
         if(this.direction.equals("east") || 
             this.direction.equals("west") ||

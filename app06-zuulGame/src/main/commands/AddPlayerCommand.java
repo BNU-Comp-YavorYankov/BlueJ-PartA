@@ -6,6 +6,15 @@ import main.utilities.InputReader;
 
 /**
  * This command adds a new player into the game.
+ * 
+ * The way it works is - The constructor recieves the current game instance and
+ * initialize the InputReader. The execution of the command recieves players name.
+ * If the user provided name meets the constraint 
+ * the new player is created and added into the game.
+ * If not, the user must provide different name while the name meet the constraint.
+ * 
+ * @author Yavor Yankov
+ * @version 22/12/2020
  */
 public class AddPlayerCommand implements Command
 {
