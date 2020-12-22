@@ -6,14 +6,20 @@ package main.models;
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
  *
- * A "Player" represents an user in the game. It keeps information
- * about energy and score points. Each player has a max 100% energy and
- * score 0 at the start of the game. After every movement from 
- * one location to another it decreases the energy with 1%.
- * If player`s energy is 0%, he dies.
- * In order to increase the energy level, the player has to
- * eat some food.
- *  @author Yavor Yankov
+ * A "Player" represents an user in the game. 
+ * It keeps information about:
+ * 
+ * @name it needs to be more than 2 symbols 
+ * 
+ * @energy default value 100%. 
+ * Increase from food. Decrease from changing location and battles.
+ * If energy become 0% each other action will decrease the health of the player.
+ * 
+ * @health default value 100%
+ * Increase from food. Decrease from battles.
+ * If health go below 0% the player dies.
+ * 
+ * @author Yavor Yankov
  * @version 22/12/2020
  */
 public class Player 
@@ -21,11 +27,12 @@ public class Player
     private String name; // name of this player
     private int energy;  // energy of this player
     private int score;   // score points of this player
-    
+    private int health;  // health of this player
+
     /**
      * The constructor of this player which
      * initialize new player as recieve its name
-     * and set default values for energy and score.
+     * and set default values of energy, score and health.
      * 
      * @param name of this player
      */
@@ -34,6 +41,7 @@ public class Player
         this.setName(name);
         this.energy = 100;
         this.score = 0;
+        this.health = 100;
     }
 
     /**
@@ -78,57 +86,53 @@ public class Player
      */
     public void increaseEnergy(int increase) 
     {
-        if(increase <= 0)
-        {
-            throw new IllegalArgumentException("Increase value cannot be equal or less than zero!");
-        }
+        isIncreaseValid(increase);
         
         int newEnergyLevels = this.energy + increase;
 
         if(newEnergyLevels > 100)
         {
             this.energy = 100;
-            System.out.println(this.name + " your energy levels are full.");
+            System.out.println(this.name + " your energy levels are full.\n\r");
         }
         else
         {
             this.energy = newEnergyLevels;
             
             System.out.println(
-                this.name + " your energy levels has been increased with " + increase + ".\n\r" +
-                "Now you have " + this.energy + " energy.");
+                this.name + " your energy levels has been increased with " + increase + "%.\n\r" +
+                "Now you have " + this.energy + "% energy.\n\r");
         }
     }
 
     /**
      * Decrease energy of this player.
      * 
-     * @exception IllegalArgumentException is thrown 
-     * if increase value is less than or equal to zero
-     * 
      * @param decrease energy levels of this player
      */
     public void decreaseEnergy(int decrease)
     {
-        if(decrease <= 0)
-        {
-            throw new IllegalArgumentException("Decrease value cannot be equal or less than zero!");
-        }
+        isDecreaseValid(decrease);
 
         int newEnergyLevels = this.energy - decrease;
 
-        if((newEnergyLevels) <= 0)
+        if(newEnergyLevels <= 0)
         {
-            System.out.println(this.name + " ,you died in a cruel fight...");
+            this.energy = 0;
+            System.out.println(
+                this.name + ", you are out of energy!\n\r" +
+                "Your health has been decreased by 1%...");
+            
+            // Decrease the health of this player
+            this.health -= 1;
+            System.out.println("Now you have " + this.health + "% health.\n\r");
         }
         else 
         {
             this.energy = newEnergyLevels;
-            
             System.out.println(
-                this.name + " ,after the fight with the monster\n\r"+
-                "your energy levels has decreased with " + decrease + "%.\n\r"+
-                "Now your energy levels are " + this.energy + "%.");
+                this.name + ", your energy levels has been decreased with " + this.energy + "%.\n\r"+
+                "Now you have " + this.energy + "% energy.\n\r");
         }
     }
 
@@ -147,6 +151,102 @@ public class Player
      */
     public void increaseScore(int increase) 
     {
-        this.score = increase;
+        isIncreaseValid(increase);
+        
+        this.score += increase;
+        System.out.println(this.name + ", your score was increased with " + increase+ "...");
+        System.out.println("Congratulations you have " + this.score +" points.");
+    }
+
+    /**
+     * @return health levels of this player
+     */
+    public int getHealth() 
+    {
+        return health;
+    }
+
+    /**
+     * Increases current health values of this player.
+     * 
+     * @param increase health of this player
+     */
+    public void increaseHealth(int increase) 
+    {
+        isIncreaseValid(increase);        
+
+        int newHealthLevels = this.health + increase;
+
+        if(newHealthLevels > 100)
+        {
+            this.health = 100;
+            System.out.println(this.name + " your health is full.\n\r");
+        }
+        else
+        {
+            this.health = newHealthLevels;
+            
+            System.out.println(
+                this.name + " your health has been increased with " + increase + ".\n\r" +
+                "Now you have " + this.health + " HP.\n\r");
+        }
+    }
+
+    /**
+     * Increases current health values of this player.
+     * 
+     * @param decrease health of this player
+     */
+    public void decreaseHealth(int decrease) 
+    {
+        isDecreaseValid(decrease);
+
+        int newHealthLevels = this.health - decrease;
+
+        if(newHealthLevels <= 0)
+        {
+            System.out.println(this.name + " , you died in a cruel fight...\n\r");
+        }
+        else 
+        {
+            this.health = newHealthLevels;
+            
+            System.out.println(
+                this.name + " , after the fight with the monster\n\r"+
+                "your health has decreased with " + decrease + "%.\n\r"+
+                "Now your health is " + this.health + "%.\n\r");
+        }
+    }
+
+    /**
+     * Checks is the increase value meets the requirements
+     * 
+     * @exception IllegalArgumentException is thrown 
+     * if increase value is less than or equal to zero
+     * 
+     * @param increase value of health, energy or score
+     */
+    private void isIncreaseValid(int increase)
+    {
+        if(increase <= 0)
+        {
+            throw new IllegalArgumentException("Increase value cannot be equal or less than zero!");
+        }
+    }
+
+    /**
+     * Checks is the decrease value meets the requirements
+     * 
+     * @exception IllegalArgumentException is thrown 
+     * if decrease value is less than or equal to zero
+     * 
+     * @param decrease value of health or energy 
+     */
+    private void isDecreaseValid(int decrease)
+    {
+        if(decrease <= 0)
+        {
+            throw new IllegalArgumentException("Decrease value cannot be equal or less than zero!");
+        }
     }
 }
