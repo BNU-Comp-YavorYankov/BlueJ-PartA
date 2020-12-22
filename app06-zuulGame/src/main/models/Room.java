@@ -1,4 +1,4 @@
-package models;
+package main.models;
 
 import java.util.Set;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ import java.util.HashMap;
 public class Room 
 {
     private String description;
-    private HashMap<String, Room> exits;        // stores exits of this room.
+    private HashMap<String, Room> exits; // stores exits of this room.
 
     /**
      * Create a room described "description". Initially, it has
@@ -84,6 +84,7 @@ public class Room
     /**
      * Return the room that is reached if we go from this room in direction
      * "direction". If there is no room in that direction, return null.
+     * 
      * @param direction The exit's direction.
      * @return The room in the given direction.
      */
