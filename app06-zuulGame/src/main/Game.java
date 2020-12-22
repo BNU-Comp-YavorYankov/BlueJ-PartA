@@ -43,6 +43,14 @@ public class Game
     }
 
     /**
+     * @return the player of this game
+     */
+    public Player getPlayer() 
+    {
+        return this.player;    
+    }
+
+    /**
      * Set new location where the player will be.
      *  
      * @param nextRoom the new location where the player will go
