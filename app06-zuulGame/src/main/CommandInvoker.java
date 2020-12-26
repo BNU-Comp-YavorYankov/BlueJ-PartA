@@ -20,19 +20,18 @@ public class CommandInvoker
      * @key Keeps the name of the command
      * @value Keeps the command class
      */
-    private final HashMap<String,Command> commands;
+    private static final HashMap<String,Command> COMMANDS = new HashMap<String, Command>();
+
     private InputReader reader; // user input source
     private Game game;          // the new game instance
 
     /**
      * The constructor of this command invoker class
-     * which initialize the commands collection and 
-     * adds the known commands into the collection.
+     * which adds the known commands into the commands collection.
      * Also, it initializes the game.
      */
     public CommandInvoker() 
     {
-        this.commands = new HashMap<String, Command>();
         this.reader = new InputReader();
         this.game = new Game();
         
@@ -49,7 +48,7 @@ public class CommandInvoker
 
         addPlayer();
 
-        this.game.printCurrentRoomLongDescription();
+        this.game.printCurrentLocationLongDescription();
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the user run quit command and confirm it.
@@ -80,7 +79,7 @@ public class CommandInvoker
          */
         String[] userInputWords = userInput.split(" ");
 
-        Command command = this.commands.get(userInputWords[0]);
+        Command command = COMMANDS.get(userInputWords[0]);
 
         if(command == null)
         {
@@ -94,7 +93,7 @@ public class CommandInvoker
              if(userInputWords[0].equals("go") && userInputWords.length > 1)
             {
                 //Gets the go command from commands collection
-                command = this.commands.get("go");
+                command = COMMANDS.get("go");
 
                 //Cast command interface to GoCommand child class
                 ((GoCommand) command).setDirection(userInputWords[1]);
@@ -109,9 +108,10 @@ public class CommandInvoker
      */
     private void seedAvailableCommands() 
     {
-        this.commands.put("go", new GoCommand(this.game));
-        this.commands.put("help", new HelpCommand(getCommandsNames()));
-        this.commands.put("quit", new QuitCommand());
+        COMMANDS.put("go", new GoCommand(this.game));
+        COMMANDS.put("map", new PrintMapCommand(this.game.getMap()));
+        COMMANDS.put("help", new HelpCommand(getCommandsNames()));
+        COMMANDS.put("quit", new QuitCommand());
     }
     
     /**
@@ -122,7 +122,7 @@ public class CommandInvoker
      */
     private Set<String> getCommandsNames()
     {
-        return this.commands.keySet();
+        return COMMANDS.keySet();
     }
 
     /**

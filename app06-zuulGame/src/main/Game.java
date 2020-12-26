@@ -36,6 +36,14 @@ public class Game
     }
 
     /**
+     * @return the map of this game
+     */
+    public Map getMap()
+    {
+        return this.map;
+    }
+
+    /**
      * @return current location
      */
     public Location getCurrentLocation()
