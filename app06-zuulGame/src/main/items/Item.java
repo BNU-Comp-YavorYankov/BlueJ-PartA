@@ -16,37 +16,15 @@ package main.models;
  * @author Yavor Yankov
  * @version 26/12/2020
  */
-public class Item 
+public interface Item 
 {
-    private int points;         // points of this item
-    private String description; // description of this item
-    
-    /**
-     * The constructor intialize new item as recieve its
-     * points and description
-     * 
-     * @param points of this item
-     * @param description of this item
-     */
-    public Item(int points, String description)
-    {
-        this.points = points;
-        this.description = description;
-    }
-
     /**
      * @return the points of this item
      */
-    public int getPoints() 
-    {
-        return points;
-    }
+    public int getPoints();
 
     /**
      * @return the description of this item
      */
-    public String getDescription() 
-    {
-        return description;
-    }
+    public String getDescription();
 }
