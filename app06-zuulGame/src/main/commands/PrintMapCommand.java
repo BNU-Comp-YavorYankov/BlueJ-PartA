@@ -1,6 +1,6 @@
 package main.commands;
 
-import main.models.Map;
+import main.Game;
 
 /**
  * The command prints out the map of this game.
@@ -10,26 +10,28 @@ import main.models.Map;
  */
 public class PrintMapCommand implements Command 
 {
-    private Map map; // the map of this game
+    private Game game; // instance of this game
 
     /**
-     * The constructor which recieve the map 
+     * The constructor which recieve the instance 
      * of this game
      * 
      * @param map of this game
      */
-    public PrintMapCommand(Map map) 
+    public PrintMapCommand(Game game) 
     {
-        this.map = map;
+        this.game = game;
     }
 
     /**
-     * Execute this command as prints out the map of this game.
+     * Execute this command as prints out the map 
+     * of this game and the current location of the player.
      * The method is overridden from Command interface.
      */
     @Override
     public void execute() 
     {
-        System.out.println(this.map);
+        System.out.println(this.game.getMap());
+        this.game.printCurrentLocationLongDescription();
     }
 }

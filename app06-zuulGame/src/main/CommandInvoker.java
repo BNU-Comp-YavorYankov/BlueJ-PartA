@@ -109,9 +109,9 @@ public class CommandInvoker
     private void seedAvailableCommands() 
     {
         COMMANDS.put("go", new GoCommand(this.game));
-        COMMANDS.put("map", new PrintMapCommand(this.game.getMap()));
-        COMMANDS.put("help", new HelpCommand(getCommandsNames()));
+        COMMANDS.put("map", new PrintMapCommand(this.game));
         COMMANDS.put("quit", new QuitCommand());
+        COMMANDS.put("help", new HelpCommand(getCommandsNames()));
     }
     
     /**
