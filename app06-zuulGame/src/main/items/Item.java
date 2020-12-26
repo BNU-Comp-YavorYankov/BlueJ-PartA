@@ -1,4 +1,4 @@
-package main.models;
+package main.items;
 
 /**
  * Class Item - an item in an adventure game.
