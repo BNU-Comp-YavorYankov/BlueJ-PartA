@@ -12,12 +12,12 @@ package main.items;
  */
 public class Sword implements Item 
 {
-    private int points;         // points of this sword
+    private int points;         // attack points of this sword
     private String description; // description of this sword
 
     /**
      * The constructor intialize new sword as it recieves its
-     * attack points and description
+     * attack points and description.
      * 
      * @param points of this sword
      * @param description of this sword
