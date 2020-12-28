@@ -1,6 +1,10 @@
 package main.models;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.Map.Entry;
+import main.items.Item;
 
 /**
  * Class Location - a location in an adventure game.
@@ -14,12 +18,16 @@ import java.util.HashMap;
  * 
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
+ * 
+ * @modifiedby Yavor Yankov
+ * @version 27/12/2020
  */
 public class Location 
 {
-    private String description;
+    private String description;              // description of this location
     private HashMap<String, Location> exits; // stores exits of this room.
-
+    private HashMap<String,Item> items;      // item name and item in this location 
+    
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -30,7 +38,8 @@ public class Location
     public Location(String description) 
     {
         this.description = description;
-        exits = new HashMap<>();
+        this.exits = new HashMap<>();
+        this.items = new HashMap<>();
     }
 
     /**
@@ -95,5 +104,23 @@ public class Location
         return "You are " + description + ".\n\r" + getPossibleExits();
     }
 
+    /**
+     * @return the items in this location
+     */
+    public HashMap<String, Item> getItems() 
+    {
+        return this.items;
+    }
+
+    /**
+     * Adds a new item for this location 
+     * that can be gathered from the player.
+     * 
+     * @param item which can be gathered by the player
+     */
+    public void addItem(String itemName, Item item) 
+    {
+        this.items.put(itemName,item);
+    }
 }
 
