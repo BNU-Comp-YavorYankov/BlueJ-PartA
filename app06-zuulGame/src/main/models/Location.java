@@ -1,9 +1,6 @@
 package main.models;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.AbstractMap.SimpleEntry;
-import java.util.Map.Entry;
 import main.items.Item;
 
 /**
@@ -20,7 +17,7 @@ import main.items.Item;
  * @version 2016.02.29
  * 
  * @modifiedby Yavor Yankov
- * @version 27/12/2020
+ * @version 28/12/2020
  */
 public class Location 
 {
@@ -101,7 +98,17 @@ public class Location
      */
     public String getLongDescription()
     {
-        return "You are " + description + ".\n\r" + getPossibleExits();
+        StringBuilder strBuilder = new StringBuilder();
+        strBuilder.append("You are " + description + ".\n\r");
+        strBuilder.append("Items: \n\r");
+        
+        for (Item item : this.items.values()) 
+        {
+            strBuilder.append(item.getDescription() + "\n\r");
+        }
+        strBuilder.append(getPossibleExits());
+
+        return strBuilder.toString();   
     }
 
     /**

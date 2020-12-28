@@ -10,7 +10,7 @@ package main.models;
  * It keeps information about all locations in the "World of Zuul".
  *
  * @author Yavor Yankov
- * @version 22/12/2020
+ * @version 28/12/2020
  */
 public class Map 
 {
@@ -71,6 +71,14 @@ public class Map
     public Location getOffice() 
     {
         return OFFICE;
+    }
+
+    /**
+     * @return all locations on the map
+     */
+    public Location[] getLocations()
+    {
+        return new Location[] {OUTSIDE, PUB, THEATER, LAB, OFFICE}; 
     }
 
     /**

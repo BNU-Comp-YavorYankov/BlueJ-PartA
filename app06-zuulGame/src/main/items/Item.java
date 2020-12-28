@@ -7,7 +7,9 @@ package main.items;
  * "World of Zuul" is a very simple, text based adventure game.  
  *
  * An "Item" represents one item in the scenery of the game. 
- * It keeps information about the item`s points and its description.
+ * It keeps information about the item`s points and description.
+ * 
+ * Each item will be randomly generated in the different locations on the map.
  * 
  * The Item class encapsulates the values of points and description.
  * Once the item is created its values cannot be changed. 
