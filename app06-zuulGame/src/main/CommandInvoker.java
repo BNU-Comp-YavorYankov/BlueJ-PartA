@@ -55,6 +55,7 @@ public class CommandInvoker
         while (true) 
         {
             String userCommand = reader.getString();
+            System.out.println();
             this.execute(userCommand);
         }
     }

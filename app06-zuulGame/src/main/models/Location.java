@@ -100,7 +100,7 @@ public class Location
     {
         StringBuilder strBuilder = new StringBuilder();
         strBuilder.append("You are " + description + ".\n\r");
-        strBuilder.append("Items: \n\r");
+        strBuilder.append("There are a couple of items that can be collected: \n\r");
         
         for (Item item : this.items.values()) 
         {

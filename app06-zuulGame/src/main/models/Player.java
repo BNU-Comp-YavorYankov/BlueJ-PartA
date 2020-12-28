@@ -1,5 +1,8 @@
 package main.models;
 
+import java.util.ArrayList;
+import main.items.Item;
+
 /**
  * Class Player - a player in an adventure game.
  * 
@@ -24,10 +27,11 @@ package main.models;
  */
 public class Player 
 {
-    private String name; // name of this player
-    private int energy;  // energy of this player
-    private int score;   // score points of this player
-    private int health;  // health of this player
+    private String name;               // name of this player
+    private int energy;                // energy of this player
+    private int score;                 // score points of this player
+    private int health;                // health of this player
+    private ArrayList<Item> inventory; // inventory of this player
 
     /**
      * The constructor of this player which
@@ -42,6 +46,7 @@ public class Player
         this.energy = 100;
         this.score = 0;
         this.health = 100;
+        this.inventory = new ArrayList<>();
     }
 
     /**
@@ -212,10 +217,28 @@ public class Player
             this.health = newHealthLevels;
             
             System.out.println(
-                this.name + " , after the fight with the monster\n\r"+
+                this.name + " , after a fight with monster\n\r"+
                 "your health has decreased with " + decrease + "%.\n\r"+
                 "Now your health is " + this.health + "%.\n\r");
         }
+    }
+
+    /**
+     * @return inventory of this player
+     */
+    public ArrayList<Item> getInventory()
+    {
+        return this.inventory;
+    }
+
+    /**
+     * Adds a new item in the player`s inventory
+     * 
+     * @param item new item to be added in the inventory
+     */
+    public void addItem(Item item)
+    {
+        this.inventory.add(item);
     }
 
     /**
