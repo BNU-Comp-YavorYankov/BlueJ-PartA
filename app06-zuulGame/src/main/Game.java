@@ -1,8 +1,9 @@
 package main;
 
-import main.models.Player;
-import main.models.Location;
-import main.models.Map;
+import java.util.HashMap;
+import main.models.*;
+import main.items.Item;
+import main.items.ItemsGenerator;
 
 /**
  * This class is the main class of the "World of Zuul" application. "World of
@@ -24,7 +25,7 @@ public class Game
     private Location currentLocation; // the location where the player is
     private Player player;            // the player of this game
     private Map map;                  // the map of this game
-
+    
     /**
      * Create the game and initialise its external map
      * and current location.
@@ -33,6 +34,7 @@ public class Game
     {
         this.map = new Map();
         this.currentLocation = this.map.getOutside();
+        new ItemsGenerator(this.map.getLocations());
     }
 
     /**

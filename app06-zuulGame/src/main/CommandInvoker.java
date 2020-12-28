@@ -20,7 +20,7 @@ public class CommandInvoker
      * @key Keeps the name of the command
      * @value Keeps the command class
      */
-    private static final HashMap<String,Command> COMMANDS = new HashMap<String, Command>();
+    private static final HashMap<String,Command> COMMANDS = new HashMap<>();
 
     private InputReader reader; // user input source
     private Game game;          // the new game instance
@@ -101,7 +101,6 @@ public class CommandInvoker
             command.execute();
         }
     }
-
     
     /**
      * Add all available commands in the commands collection
@@ -110,8 +109,8 @@ public class CommandInvoker
     {
         COMMANDS.put("go", new GoCommand(this.game));
         COMMANDS.put("map", new PrintMapCommand(this.game));
-        COMMANDS.put("quit", new QuitCommand());
         COMMANDS.put("help", new HelpCommand(getCommandsNames()));
+        COMMANDS.put("quit", new QuitCommand());
     }
     
     /**
