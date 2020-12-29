@@ -240,7 +240,7 @@ public class Player
     {
         this.inventory.add(item);
 
-        System.out.println(this.name + ", you picked " + item.getName());
+        System.out.println(this.name + ", you have picked " + item.getName());
     }
 
     /**
