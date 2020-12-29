@@ -53,8 +53,16 @@ public class ItemsGenerator
         ITEMS.add(new Shield("phantom-shield", 30, "phantom-shield increase your health with 30 points."));
         ITEMS.add(new Apple("golden-apple", 50, "golden-apple increase your health and energy with 50 points."));
         ITEMS.add(new Apple("apple", 25, "apple increase your health and energy with 25 points."));
-        ITEMS.add(new Potion("health-potion", 100, "health-potion increase your health with 100 points."));
-        ITEMS.add(new Potion("energy-potion", 100, "energy-potion increase your energy with 100 points."));
+        ITEMS.add(new Potion(
+            "health-potion", 
+            100, 
+            "health-potion increase your health with 100 points.", 
+            PotionType.HP));
+        ITEMS.add(new Potion(
+            "energy-potion", 
+            100, 
+            "energy-potion increase your energy with 100 points.", 
+            PotionType.ENERGY));
     }
 
     /**

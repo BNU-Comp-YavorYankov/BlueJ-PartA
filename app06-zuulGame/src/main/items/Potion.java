@@ -17,7 +17,8 @@ public class Potion implements Item
     private String name;        // name of this potion
     private int points;         // health and energy points of this potion
     private String description; // description of this potion
-    
+    private PotionType type;    // type of this potion
+
     /**
      * The constructor intialize new potion as it recieves its
      * health and energy points and description
@@ -25,12 +26,14 @@ public class Potion implements Item
      * @param name of this potion
      * @param points of this potion
      * @param description of this potion
+     * @param type is the type of this potion
      */
-    public Potion(String name, int points, String description)
+    public Potion(String name, int points, String description, PotionType type)
     {
         this.name = name;
         this.points = points;
         this.description = description;
+        this.type = type;
     }
 
     /**
@@ -43,7 +46,7 @@ public class Potion implements Item
     }
 
     /**
-     * @return health and energy points of this potion
+     * @return points of this potion
      */
     @Override
     public int getPoints() 
@@ -58,5 +61,13 @@ public class Potion implements Item
     public String getDescription() 
     {
         return this.description;
+    }
+
+    /**
+     * @return type of this potion
+     */
+    public PotionType getType()
+    {
+        return this.type;
     }
 }
