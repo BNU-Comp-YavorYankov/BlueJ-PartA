@@ -2,6 +2,8 @@ package main.models;
 
 import java.util.ArrayList;
 import main.items.Item;
+import main.items.Potion;
+import main.items.PotionType;
 
 /**
  * Class Player - a player in an adventure game.
@@ -238,9 +240,25 @@ public class Player
      */
     public void addItem(Item item)
     {
-        this.inventory.add(item);
+        if(item instanceof Potion)
+        {
+            Potion potion = (Potion)item;
 
-        System.out.println(this.name + ", you have picked " + item.getName());
+            if(potion.getType().equals(PotionType.HP))
+            {
+                increaseHealth(item.getPoints());
+            }
+            else if(potion.getType().equals(PotionType.ENERGY))
+            {
+                increaseEnergy(item.getPoints());
+            }
+        }
+        else
+        {
+            this.inventory.add(item);
+
+            System.out.println(this.name + ", you have picked " + item.getName());
+        }
     }
 
     /**
