@@ -12,6 +12,7 @@ package main.items;
  */
 public class Sword implements Item 
 {
+    private String name;        // name of this sword
     private int points;         // attack points of this sword
     private String description; // description of this sword
 
@@ -19,15 +20,26 @@ public class Sword implements Item
      * The constructor intialize new sword as it recieves its
      * attack points and description.
      * 
+     * @param name of this sword
      * @param points of this sword
      * @param description of this sword
      */
-    public Sword(int points, String description)
+    public Sword(String name, int points, String description)
     {
+        this.name = name;
         this.points = points;
         this.description = description;
     }
     
+    /**
+     * @return the name of this sword
+     */
+    @Override
+    public String getName() 
+    {
+        return this.name;
+    }
+
     /**
      * @return the attack points of this sword 
      */

@@ -12,6 +12,7 @@ package main.items;
  */
 public class Dagger implements Item
 {
+    private String name;        // name of this dagger
     private int points;         // attack points of this dagger
     private String description; // description of this dagger
 
@@ -19,13 +20,24 @@ public class Dagger implements Item
      * The constructor intialize new dagger as it recieves its
      * attack points and description
      * 
+     * @param name of this dagger
      * @param points of this dagger
      * @param description of this dagger
      */
-    public Dagger(int points, String description)
+    public Dagger(String name, int points, String description)
     {
+        this.name = name;
         this.points = points;
         this.description = description;
+    }
+
+    /**
+     * @return the name of this dagger
+     */
+    @Override
+    public String getName() 
+    {
+        return this.name;
     }
 
     /**

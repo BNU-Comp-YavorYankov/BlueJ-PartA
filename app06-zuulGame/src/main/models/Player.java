@@ -54,7 +54,7 @@ public class Player
      */
     public String getName() 
     {
-        return name;
+        return this.name;
     }
 
     /**
@@ -78,7 +78,7 @@ public class Player
      */
     public int getEnergy() 
     {
-        return energy;
+        return this.energy;
     }
 
     /**
@@ -146,7 +146,7 @@ public class Player
      */
     public int getScore() 
     {
-        return score;
+        return this.score;
     }
 
     /**
@@ -168,7 +168,7 @@ public class Player
      */
     public int getHealth() 
     {
-        return health;
+        return this.health;
     }
 
     /**
@@ -239,6 +239,8 @@ public class Player
     public void addItem(Item item)
     {
         this.inventory.add(item);
+
+        System.out.println(this.name + ", you picked " + item.getName());
     }
 
     /**

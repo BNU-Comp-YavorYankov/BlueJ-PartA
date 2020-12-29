@@ -12,6 +12,7 @@ package main.items;
  */
 public class Apple implements Item
 {
+    private String name;        // name of this apple
     private int points;         // health points of this apple
     private String description; // description of this apple
 
@@ -19,13 +20,23 @@ public class Apple implements Item
      * The constructor intialize new apple as it recieves its
      * health points and description
      * 
+     * @param name of this apple
      * @param points of this apple
      * @param description of this apple
      */
-    public Apple(int points, String description)
+    public Apple(String name, int points, String description)
     {
         this.points = points;
         this.description = description;
+    }
+
+    /**
+     * @return the name of this apple
+     */
+    @Override
+    public String getName() 
+    {
+        return this.name;
     }
 
     /**

@@ -56,7 +56,7 @@ public class CommandInvoker
         {
             String userCommand = reader.getString();
             System.out.println();
-            this.execute(userCommand);
+            execute(userCommand);
         }
     }
 
@@ -72,7 +72,7 @@ public class CommandInvoker
      * 
      * @param userInput The user input which will execute a command.
      */
-    public void execute(String userInput) 
+    private void execute(String userInput) 
     {
         /**
          * Firts index is the command.
@@ -88,16 +88,30 @@ public class CommandInvoker
         }
         else
         {
-            /**
-             * If the user command is 'go' and there is more than one word
-             */
-             if(userInputWords[0].equals("go") && userInputWords.length > 1)
+            // If the user command is 'go' and there is more than one word
+            if(userInputWords[0].equals("go") && userInputWords.length > 1)
             {
                 //Gets the go command from commands collection
                 command = COMMANDS.get("go");
 
-                //Cast command interface to GoCommand child class
+                /**
+                 * Cast command interface to GoCommand child class
+                 * and set direction from second word of the user input.
+                 */ 
                 ((GoCommand) command).setDirection(userInputWords[1]);
+            }
+            // If the user command is 'pick' and there is more than one word
+            else if(userInputWords[0].equals("pick") && userInputWords.length > 1)
+            {
+                //Gets the pick command from commands collection
+                command = COMMANDS.get("pick");
+
+                /**
+                 * Cast command interface to PickCommand child class
+                 * and set the item name from second word
+                 * of the user input.
+                 */
+                 ((PickCommand) command).setItem(userInputWords[1]);
             }
             command.execute();
         }
@@ -109,6 +123,7 @@ public class CommandInvoker
     private void seedAvailableCommands() 
     {
         COMMANDS.put("go", new GoCommand(this.game));
+        COMMANDS.put("pick", new PickCommand(this.game));
         COMMANDS.put("map", new PrintMapCommand(this.game));
         COMMANDS.put("help", new HelpCommand(getCommandsNames()));
         COMMANDS.put("quit", new QuitCommand());

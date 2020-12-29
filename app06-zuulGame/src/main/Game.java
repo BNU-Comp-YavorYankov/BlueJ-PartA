@@ -1,8 +1,6 @@
 package main;
 
-import java.util.HashMap;
 import main.models.*;
-import main.items.Item;
 import main.items.ItemsGenerator;
 
 /**

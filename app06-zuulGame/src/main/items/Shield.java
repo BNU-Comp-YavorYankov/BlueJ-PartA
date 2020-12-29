@@ -15,6 +15,7 @@ package main.items;
  */
 public class Shield implements Item 
 {
+    private String name;        // name of this shield
     private int points;         // shield points of this shield
     private String description; // description of this shield
 
@@ -22,13 +23,24 @@ public class Shield implements Item
      * The constructor intialize new shield as it recieves its
      * shield points and description.
      * 
+     * @param name of this shield
      * @param points of this shield
      * @param description of this shield
      */
-    public Shield(int points, String description)
+    public Shield(String name, int points, String description)
     {
+        this.name = name;
         this.points = points;
         this.description = description;
+    }
+
+    /**
+     * @return the name of this shield
+     */
+    @Override
+    public String getName() 
+    {
+        return this.name;
     }
 
     /**

@@ -41,17 +41,24 @@ public class AddPlayerCommand implements Command
         
         String name = this.reader.getString();
         
-        while (name.length() < 3) 
+        if(name.length() < 3)
         {
-            try 
+            while (name.length() < 3) 
             {
-                this.game.setPlayer(new Player(name));
+                try 
+                {
+                    this.game.setPlayer(new Player(name));
+                }
+                catch (IllegalArgumentException e) 
+                {
+                    System.out.println(e.getMessage());
+                    name = this.reader.getString();
+                }
             }
-            catch (IllegalArgumentException e) 
-            {
-                System.out.println(e.getMessage());
-                name = this.reader.getString();
-            }
+        }
+        else
+        {
+            this.game.setPlayer(new Player(name));
         }
         System.out.println("Great " + name + ", let`s your journey begin now...");
         System.out.println();

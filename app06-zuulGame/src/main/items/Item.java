@@ -21,6 +21,11 @@ package main.items;
 public interface Item 
 {
     /**
+     * @return the name of this item
+     */
+    public String getName();
+
+    /**
      * @return the points of this item
      */
     public int getPoints();

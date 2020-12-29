@@ -14,20 +14,32 @@ package main.items;
  */
 public class Potion implements Item
 {
+    private String name;        // name of this potion
     private int points;         // health and energy points of this potion
     private String description; // description of this potion
-
+    
     /**
      * The constructor intialize new potion as it recieves its
      * health and energy points and description
      * 
+     * @param name of this potion
      * @param points of this potion
      * @param description of this potion
      */
-    public Potion(int points, String description)
+    public Potion(String name, int points, String description)
     {
+        this.name = name;
         this.points = points;
         this.description = description;
+    }
+
+    /**
+     * @return the name of this potion
+     */
+    @Override
+    public String getName() 
+    {
+        return this.name;
     }
 
     /**

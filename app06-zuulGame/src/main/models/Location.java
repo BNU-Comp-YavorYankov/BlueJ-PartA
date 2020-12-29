@@ -120,6 +120,16 @@ public class Location
     }
 
     /**
+     * Remove an item from items collection.
+     * 
+     * @param itemName to be removed
+     */
+    public void removeItem(String itemName)
+    {
+        this.items.remove(itemName);
+    }
+
+    /**
      * Adds a new item for this location 
      * that can be gathered from the player.
      * 
