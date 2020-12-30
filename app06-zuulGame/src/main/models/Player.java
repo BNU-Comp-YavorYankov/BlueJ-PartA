@@ -1,9 +1,12 @@
 package main.models;
 
 import java.util.ArrayList;
+import main.items.Apple;
 import main.items.Item;
 import main.items.Potion;
 import main.items.PotionType;
+import main.items.Shield;
+import main.models.Inventory;
 
 /**
  * Class Player - a player in an adventure game.
@@ -14,7 +17,7 @@ import main.items.PotionType;
  * A "Player" represents an user in the game. 
  * It keeps information about:
  * 
- * @name it needs to be more than 2 symbols 
+ * @name it needs to be more than 2 symbols long
  * 
  * @energy default value 100%. 
  * Increase from food. Decrease from changing location and battles.
@@ -29,11 +32,13 @@ import main.items.PotionType;
  */
 public class Player 
 {
-    private String name;               // name of this player
-    private int energy;                // energy of this player
-    private int score;                 // score points of this player
-    private int health;                // health of this player
-    private ArrayList<Item> inventory; // inventory of this player
+    private String name;           // name of this player
+    private int energy;            // energy of this player
+    private int score;             // score points of this player
+    private int health;            // health of this player
+    private Inventory inventory;   // inventory of this player
+    private int maxHealthCapacity; // maximum health of this player
+    private int attack;            // attack points of this player
 
     /**
      * The constructor of this player which
@@ -48,7 +53,9 @@ public class Player
         this.energy = 100;
         this.score = 0;
         this.health = 100;
-        this.inventory = new ArrayList<>();
+        this.attack = 0;
+        this.maxHealthCapacity = 100;
+        this.inventory = new Inventory(this);
     }
 
     /**
@@ -184,9 +191,9 @@ public class Player
 
         int newHealthLevels = this.health + increase;
 
-        if(newHealthLevels > 100)
+        if(newHealthLevels > this.maxHealthCapacity)
         {
-            this.health = 100;
+            this.health = this.maxHealthCapacity;
             System.out.println(this.name + " your health is full.\n\r");
         }
         else
@@ -226,15 +233,30 @@ public class Player
     }
 
     /**
+     * Increase the maximum health of this player
+     * 
+     * @param increase the amount to be increased with
+     */
+    public void increaseHealthCapacity(int increase)
+    {
+        this.maxHealthCapacity += increase;
+        System.out.println("Your max health capacity is " + this.maxHealthCapacity);
+    }
+
+    /**
      * @return inventory of this player
      */
-    public ArrayList<Item> getInventory()
+    public Inventory getInventory()
     {
         return this.inventory;
     }
 
     /**
-     * Adds a new item in the player`s inventory
+     * Adds a new item in the player`s inventory.
+     * If the item is potion it will be applied 
+     * to the player and will not be added into
+     * the inventory. Same action would be taken
+     * for apple item.
      * 
      * @param item new item to be added in the inventory
      */
@@ -253,19 +275,46 @@ public class Player
                 increaseEnergy(item.getPoints());
             }
         }
+        else if(item instanceof Apple)
+        {
+            increaseHealth(item.getPoints());
+            increaseEnergy(item.getPoints());
+        }
+        else if(item instanceof Shield)
+        {
+            this.inventory.equipShield(item);
+        }
         else
         {
-            this.inventory.add(item);
-
-            System.out.println(this.name + ", you have picked " + item.getName());
+            this.inventory.equipWeapon(item);
         }
     }
 
     /**
+     * @return attack points of this player
+     */
+    public int getAttackPoints()
+    {
+        return this.attack;
+    }
+
+    /**
+     * Set attack points of this player depending
+     * on the equiped weapon/s.
+     * 
+     * @param points that would be player`s attack 
+     */
+    public void setAttackPoints(int points) 
+    {
+        this.attack = points;
+        System.out.println(this.name + ", your attack points are " + this.attack);
+	}
+
+    /**
      * Checks is the increase value meets the requirements
      * 
-     * @exception IllegalArgumentException is thrown 
-     * if increase value is less than or equal to zero
+     * @exception IllegalArgumentException is thrown if increase value is less than
+     *                                     or equal to zero
      * 
      * @param increase value of health, energy or score
      */

@@ -1,8 +1,8 @@
 package main;
 
 /**
- * This class creates an instance of the CommandInvoker 
- * which initialize the game.
+ * This class creates an instance of the CommandInvoker which initialize the
+ * game.
  *
  * @author Yavor Yankov
  * @version 21/12/2020

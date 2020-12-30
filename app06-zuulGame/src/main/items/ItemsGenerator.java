@@ -43,14 +43,14 @@ public class ItemsGenerator
     /**
      * Add all available items in the items collection
      */
-    private void initializeItems() 
+    private void initializeItems()
     {
         ITEMS.add(new Sword("iron-sword", 10, "iron-sword with 10 attack points."));
         ITEMS.add(new Sword("emerald-sword", 15, "emerald-sword with 15 attack points."));
         ITEMS.add(new Dagger("bronze-dagger", 5, "bronze-dagger with 5 attack points."));
         ITEMS.add(new Dagger("steel-dagger", 12, "steel-dagger with 12 attack points."));
-        ITEMS.add(new Shield("vigilante-shield", 20, "vigilante-shield increase your health with 20 points."));
-        ITEMS.add(new Shield("phantom-shield", 30, "phantom-shield increase your health with 30 points."));
+        ITEMS.add(new Shield("vigilante-shield", 20, "vigilante-shield increase your health capacity with 20 points."));
+        ITEMS.add(new Shield("phantom-shield", 30, "phantom-shield increase your health capacity with 30 points."));
         ITEMS.add(new Apple("golden-apple", 50, "golden-apple increase your health and energy with 50 points."));
         ITEMS.add(new Apple("apple", 25, "apple increase your health and energy with 25 points."));
         ITEMS.add(new Potion(
