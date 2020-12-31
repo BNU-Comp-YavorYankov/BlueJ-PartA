@@ -43,7 +43,9 @@ public class GoCommand implements Command
     /**
      * Executes this command as check is the direction field 
      * empty, null or valid direction and 
-     * change new location of the current user
+     * change new location of the player.
+     * Also every time when the location is changed 
+     * the player`s energy decrease with 5.
      */
     @Override
     public void execute() 
@@ -72,6 +74,8 @@ public class GoCommand implements Command
             System.out.println(this.game
                 .getCurrentLocation()
                 .getLongDescription());
+            
+            this.game.getPlayer().decreaseEnergy(5);
         }
     }
 

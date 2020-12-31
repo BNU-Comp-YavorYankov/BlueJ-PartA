@@ -130,12 +130,18 @@ public class Player
 
         int newEnergyLevels = this.energy - decrease;
 
+        if(newEnergyLevels < 20)
+        {
+            System.out.println("Energy levels are below 20 take an energy potion or an apple...");
+        }
+
         if(newEnergyLevels <= 0)
         {
             this.energy = 0;
             System.out.println(
                 this.name + ", you are out of energy!\n\r" +
-                "Your health has been decreased by 1%...");
+                "You should find an energy potion or an apple" +
+                "Every other action will decrease your health with 1%");
             
             // Decrease the health of this player
             this.health -= 1;
@@ -145,7 +151,7 @@ public class Player
         {
             this.energy = newEnergyLevels;
             System.out.println(
-                this.name + ", your energy levels has been decreased with " + this.energy + "%.\n\r"+
+                this.name + ", your energy levels has been decreased with " + decrease + "%.\n\r"+
                 "Now you have " + this.energy + "% energy.\n\r");
         }
     }
