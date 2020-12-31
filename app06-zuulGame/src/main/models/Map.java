@@ -28,7 +28,9 @@ public class Map
     private static final Location WAREHOUSE = new Location("in the pub`s warehouse");
     // Constant for shopping centre location
     private static final Location SHOPPING_CENTRE = new Location("in the shopping centre");
-    
+    // Constant for dungeon location
+    private static final Location DUNGEON = new Location("in the dungeon");
+
     /**
      * The constructor of this map which links locations` exits together.
      */
@@ -92,6 +94,14 @@ public class Map
     {
         return SHOPPING_CENTRE;
     }
+    
+    /**
+     * @return dungeon location
+     */
+    public Location getDungeon() 
+    {
+        return DUNGEON;
+    }
 
     /**
      * @return all locations on the map
@@ -106,7 +116,8 @@ public class Map
             LAB, 
             OFFICE, 
             WAREHOUSE, 
-            SHOPPING_CENTRE
+            SHOPPING_CENTRE,
+            DUNGEON
         }; 
     }
 
@@ -119,6 +130,12 @@ public class Map
         StringBuilder stringBuilder = new StringBuilder();
         
         stringBuilder.append(" +-------------------------------------------------+\n\r");
+        stringBuilder.append(" | +---------+       +-----------------+           |\n\r");
+        stringBuilder.append(" | | DUNGEON | <---> | SHOPPING CENTRE |           |\n\r");
+        stringBuilder.append(" | +---------+       +-----------------+           |\n\r");
+        stringBuilder.append(" |                       /|\\                      |\n\r");
+        stringBuilder.append(" |                        |                        |\n\r");
+        stringBuilder.append(" |                       \\|/                      |\n\r");
         stringBuilder.append(" | +---------+       +---------+       +---------+ |\n\r");
         stringBuilder.append(" | |   PUB   | <---> | OUTSIDE | <---> | THEATER | |\n\r");
         stringBuilder.append(" | +---------+       +---------+       +---------+ |\n\r");
@@ -156,5 +173,8 @@ public class Map
         WAREHOUSE.setExit("north", PUB);
 
         SHOPPING_CENTRE.setExit("south", OUTSIDE);
+        SHOPPING_CENTRE.setExit("west", DUNGEON);
+
+        DUNGEON.setExit("east", SHOPPING_CENTRE);
     }
 }

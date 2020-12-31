@@ -91,7 +91,7 @@ public class ItemsGenerator
         Collections.shuffle(ITEMS);
         
         int currentLocationIndex = 0;
-
+         
         for (Item item : ITEMS) 
         {
             if (currentLocationIndex == locations.length) 
