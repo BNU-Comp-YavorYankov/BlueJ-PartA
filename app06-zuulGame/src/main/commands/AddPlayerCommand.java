@@ -60,6 +60,7 @@ public class AddPlayerCommand implements Command
         {
             this.game.setPlayer(new Player(name));
         }
+        
         System.out.println("Great " + name + ", let`s your journey begin now...");
         System.out.println();
     }    

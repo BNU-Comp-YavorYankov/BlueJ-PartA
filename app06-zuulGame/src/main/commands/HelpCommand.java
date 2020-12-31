@@ -1,7 +1,6 @@
 package main.commands;
 
-import java.util.Set;
-
+import java.util.Collection;
 import main.Game;
 
 /**
@@ -12,8 +11,8 @@ import main.Game;
  */
 public class HelpCommand implements Command
 {
-    private Set<String> commands; // all known commands
-    private Game game;            // game instance
+    private Collection<Command> commands; // all known commands
+    private Game game;                // game instance
 
     /**
      * The constructor which recieve the commands from
@@ -21,7 +20,7 @@ public class HelpCommand implements Command
      * 
      * @param commands all known commands
      */
-    public HelpCommand(Set<String> commands, Game game) 
+    public HelpCommand(Collection<Command> commands, Game game) 
     {
         this.commands = commands;
         this.game = game;
@@ -38,9 +37,20 @@ public class HelpCommand implements Command
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        // Creates a new string with all commands and specified delimiter
-        System.out.println(String.join(" ", this.commands));
+        for (Command command : commands) 
+        {
+            System.out.println(command);
+        }
 
         System.out.println("\n\r" + this.game.getCurrentLocation().getLongDescription());
+    }
+
+    /**
+     * @return description of this command
+     */
+    @Override
+    public String toString()
+    {
+        return "help - print out all commands and current location";
     }
 }

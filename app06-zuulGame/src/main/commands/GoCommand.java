@@ -78,6 +78,15 @@ public class GoCommand implements Command
             this.game.getPlayer().decreaseEnergy(5);
         }
     }
+ 
+    /**
+     * @return description of this command
+     */
+    @Override
+    public String toString()
+    {
+        return "go {direction} - go to the given direction";
+    }
 
     /**
      * @return is the direction valid

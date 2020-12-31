@@ -34,4 +34,13 @@ public class PrintMapCommand implements Command
         System.out.println(this.game.getMap());
         this.game.printCurrentLocationLongDescription();
     }
+    
+    /**
+     * @return description of this command
+     */
+    @Override
+    public String toString()
+    {
+        return "map - print out the map";
+    }
 }

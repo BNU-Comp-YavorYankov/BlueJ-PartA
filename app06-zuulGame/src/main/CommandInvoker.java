@@ -1,8 +1,10 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 import main.commands.*;
+import main.items.Item;
 import main.utilities.InputReader;
 
 /**
@@ -125,19 +127,8 @@ public class CommandInvoker
         COMMANDS.put("go", new GoCommand(this.game));
         COMMANDS.put("pick", new PickCommand(this.game));
         COMMANDS.put("map", new PrintMapCommand(this.game));
-        COMMANDS.put("help", new HelpCommand(getCommandsNames(), this.game));
+        COMMANDS.put("help", new HelpCommand(COMMANDS.values(), this.game));
         COMMANDS.put("quit", new QuitCommand());
-    }
-    
-    /**
-     * It gets only the keys/commands names from the commands collection
-     * and return them in Set collection
-     * 
-     * @return Keys/commands names of this commands collection
-     */
-    private Set<String> getCommandsNames()
-    {
-        return COMMANDS.keySet();
     }
 
     /**

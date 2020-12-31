@@ -46,4 +46,13 @@ public class QuitCommand implements Command
             }
         }
     }
+
+    /**
+     * @return description of this command
+     */
+    @Override
+    public String toString()
+    {
+        return "quit - quit the game";
+    }
 }

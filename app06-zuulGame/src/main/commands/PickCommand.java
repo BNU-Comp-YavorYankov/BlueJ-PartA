@@ -77,4 +77,13 @@ public class PickCommand implements Command
             System.out.println("There are no more items in this location");
         }
     }
+     
+    /**
+     * @return description of this command
+     */
+    @Override
+    public String toString()
+    {
+        return "pick {item name} - pick an item";
+    }
 }
