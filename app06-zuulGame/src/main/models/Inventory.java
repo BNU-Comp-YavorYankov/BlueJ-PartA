@@ -91,7 +91,7 @@ public class Inventory
         this.weapon = new Item[1];
         this.weapon[0] = sword;
         
-        System.out.println("Your weapon " + sword.getName() + " has been equipped...");
+        System.out.println(sword.getName() + " was equipped...");
 
         this.player.setAttackPoints(sword.getPoints());
     }
@@ -116,7 +116,7 @@ public class Inventory
             this.weapon[0] = dagger;
 
             attackPoints = dagger.getPoints();
-            System.out.println("Your weapon " + dagger.getName() + " has been equipped...");
+            System.out.println(dagger.getName() + " was equipped...");
         }
         else if(this.weapon[0] != null &&
                 this.weapon[1] != null)
@@ -129,7 +129,7 @@ public class Inventory
         {
             this.weapon[1] = dagger;
             attackPoints = this.weapon[0].getPoints() + this.weapon[1].getPoints();
-            System.out.println("Your weapon " + dagger.getName() + " has been equipped...");
+            System.out.println(dagger.getName() + " was equipped...");
         }
         else
         {

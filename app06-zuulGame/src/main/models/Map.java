@@ -26,6 +26,8 @@ public class Map
     private static final Location OFFICE = new Location("in the computing admin office");
     // Constant for warehouse location
     private static final Location WAREHOUSE = new Location("in the pub`s warehouse");
+    // Constant for shopping centre location
+    private static final Location SHOPPING_CENTRE = new Location("in the shopping centre");
     
     /**
      * The constructor of this map which links locations` exits together.
@@ -84,11 +86,28 @@ public class Map
     }
 
     /**
+     * @return shopping centre location
+     */
+    public Location getShoppingCentre() 
+    {
+        return SHOPPING_CENTRE;
+    }
+
+    /**
      * @return all locations on the map
      */
     public Location[] getLocations()
     {
-        return new Location[] {OUTSIDE, PUB, THEATER, LAB, OFFICE, WAREHOUSE}; 
+        return new Location[] 
+        {
+            OUTSIDE, 
+            PUB, 
+            THEATER, 
+            LAB, 
+            OFFICE, 
+            WAREHOUSE, 
+            SHOPPING_CENTRE
+        }; 
     }
 
     /**
@@ -121,10 +140,11 @@ public class Map
     {
         PUB.setExit("east", OUTSIDE);
         PUB.setExit("south", WAREHOUSE);
-        
+
         OUTSIDE.setExit("east", THEATER);
         OUTSIDE.setExit("south", LAB);
         OUTSIDE.setExit("west", PUB);
+        OUTSIDE.setExit("north", SHOPPING_CENTRE);
 
         THEATER.setExit("west", OUTSIDE);
 
@@ -134,5 +154,7 @@ public class Map
         OFFICE.setExit("west", LAB);
 
         WAREHOUSE.setExit("north", PUB);
+
+        SHOPPING_CENTRE.setExit("south", OUTSIDE);
     }
 }
