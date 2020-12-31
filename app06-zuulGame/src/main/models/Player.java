@@ -1,12 +1,10 @@
 package main.models;
 
-import java.util.ArrayList;
 import main.items.Apple;
 import main.items.Item;
 import main.items.Potion;
 import main.items.PotionType;
 import main.items.Shield;
-import main.models.Inventory;
 
 /**
  * Class Player - a player in an adventure game.
@@ -174,8 +172,7 @@ public class Player
         isIncreaseValid(increase);
         
         this.score += increase;
-        System.out.println(this.name + ", your score was increased with " + increase+ "...");
-        System.out.println("Congratulations you have " + this.score +" points.");
+        System.out.println("score: " + this.score);
     }
 
     /**
@@ -319,8 +316,8 @@ public class Player
     /**
      * Checks is the increase value meets the requirements
      * 
-     * @exception IllegalArgumentException is thrown if increase value is less than
-     *                                     or equal to zero
+     * @exception IllegalArgumentException is thrown 
+     * if increase value is less than or equal to zero
      * 
      * @param increase value of health, energy or score
      */

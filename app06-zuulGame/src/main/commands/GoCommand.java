@@ -76,6 +76,7 @@ public class GoCommand implements Command
                 .getLongDescription());
             
             this.game.getPlayer().decreaseEnergy(5);
+            this.game.getPlayer().increaseScore(1);
         }
     }
  

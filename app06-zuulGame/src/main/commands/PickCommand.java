@@ -70,6 +70,8 @@ public class PickCommand implements Command
             
             currentLocation.removeItem(
                 this.item.getName());
+            
+            player.increaseScore(1);
         }
 
         if(currentLocation.getItems().size() == 0)
