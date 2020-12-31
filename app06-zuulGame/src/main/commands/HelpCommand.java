@@ -2,6 +2,8 @@ package main.commands;
 
 import java.util.Set;
 
+import main.Game;
+
 /**
  * The command prints out all possible commands.
  * 
@@ -10,8 +12,8 @@ import java.util.Set;
  */
 public class HelpCommand implements Command
 {
-    // All known commands
-    private Set<String> commands;
+    private Set<String> commands; // all known commands
+    private Game game;            // game instance
 
     /**
      * The constructor which recieve the commands from
@@ -19,9 +21,10 @@ public class HelpCommand implements Command
      * 
      * @param commands all known commands
      */
-    public HelpCommand(Set<String> commands) 
+    public HelpCommand(Set<String> commands, Game game) 
     {
         this.commands = commands;
+        this.game = game;
     }
 
     /**
@@ -37,5 +40,7 @@ public class HelpCommand implements Command
         System.out.println("Your command words are:");
         // Creates a new string with all commands and specified delimiter
         System.out.println(String.join(" ", this.commands));
+
+        System.out.println("\n\r" + this.game.getCurrentLocation().getLongDescription());
     }
 }
