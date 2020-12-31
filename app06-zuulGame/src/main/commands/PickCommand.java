@@ -71,6 +71,10 @@ public class PickCommand implements Command
             currentLocation.removeItem(
                 this.item.getName());
         }
-        
+
+        if(currentLocation.getItems().size() == 0)
+        {
+            System.out.println("There are no more items in this location");
+        }
     }
 }

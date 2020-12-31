@@ -26,6 +26,7 @@ public class Apple implements Item
      */
     public Apple(String name, int points, String description)
     {
+        this.name = name;
         this.points = points;
         this.description = description;
     }
