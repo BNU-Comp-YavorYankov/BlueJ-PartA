@@ -24,7 +24,9 @@ public class Map
     private static final Location LAB = new Location("in a computing lab");
     // Constant for office location
     private static final Location OFFICE = new Location("in the computing admin office");
-
+    // Constant for warehouse location
+    private static final Location WAREHOUSE = new Location("in the pub`s warehouse");
+    
     /**
      * The constructor of this map which links locations` exits together.
      */
@@ -74,11 +76,19 @@ public class Map
     }
 
     /**
+     * @return pub`s warehouse location
+     */
+    public Location getWarehouse() 
+    {
+        return WAREHOUSE;
+    }
+
+    /**
      * @return all locations on the map
      */
     public Location[] getLocations()
     {
-        return new Location[] {OUTSIDE, PUB, THEATER, LAB, OFFICE}; 
+        return new Location[] {OUTSIDE, PUB, THEATER, LAB, OFFICE, WAREHOUSE}; 
     }
 
     /**
@@ -93,12 +103,12 @@ public class Map
         stringBuilder.append(" | +---------+       +---------+       +---------+ |\n\r");
         stringBuilder.append(" | |   PUB   | <---> | OUTSIDE | <---> | THEATER | |\n\r");
         stringBuilder.append(" | +---------+       +---------+       +---------+ |\n\r");
-        stringBuilder.append(" |                       /|\\                       |\n\r");
-        stringBuilder.append(" |                        |                        |\n\r");
-        stringBuilder.append(" |                       \\|/                       |\n\r");
-        stringBuilder.append(" |                   +---------+       +---------+ |\n\r");
-        stringBuilder.append(" |                   |   LAB   | <---> | OFFICE  | |\n\r");
-        stringBuilder.append(" |                   +---------+       +---------+ |\n\r");
+        stringBuilder.append(" |     /|\\              /|\\                       |\n\r");
+        stringBuilder.append(" |      |                 |                        |\n\r");
+        stringBuilder.append(" |     \\|/              \\|/                       |\n\r");
+        stringBuilder.append(" | +---------+       +---------+       +---------+ |\n\r");
+        stringBuilder.append(" | |WAREHOUSE|       |   LAB   | <---> | OFFICE  | |\n\r");
+        stringBuilder.append(" | +---------+       +---------+       +---------+ |\n\r");
         stringBuilder.append(" +-------------------------------------------------+\n\r\n\r");
 
         return stringBuilder.toString();
@@ -110,7 +120,8 @@ public class Map
     private void setLocationsExits() 
     {
         PUB.setExit("east", OUTSIDE);
-
+        PUB.setExit("south", WAREHOUSE);
+        
         OUTSIDE.setExit("east", THEATER);
         OUTSIDE.setExit("south", LAB);
         OUTSIDE.setExit("west", PUB);
@@ -121,5 +132,7 @@ public class Map
         LAB.setExit("east", OFFICE);
 
         OFFICE.setExit("west", LAB);
+
+        WAREHOUSE.setExit("north", PUB);
     }
 }

@@ -1,10 +1,7 @@
 package main;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 import main.commands.*;
-import main.items.Item;
 import main.utilities.InputReader;
 
 /**
