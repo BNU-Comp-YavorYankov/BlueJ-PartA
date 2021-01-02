@@ -24,7 +24,8 @@ public class Location
     private String description;              // description of this location
     private HashMap<String, Location> exits; // stores exits of this room.
     private HashMap<String,Item> items;      // item name and item in this location 
-    
+    private Monster boss;                    // boss of this game
+
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
@@ -100,12 +101,16 @@ public class Location
     {
         StringBuilder strBuilder = new StringBuilder();
         strBuilder.append("You are " + description + ".\n\r");
-        strBuilder.append("There are a couple of items that can be collected: \n\r");
-        
-        for (Item item : this.items.values()) 
+    
+        if(this.items.size() > 0)
         {
-            strBuilder.append(item.getDescription() + "\n\r");
-        }
+            strBuilder.append("There are a couple of items that can be collected: \n\r");
+            
+            for (Item item : this.items.values()) 
+            {
+                strBuilder.append(item.getDescription() + "\n\r");
+            }
+        } 
         strBuilder.append(getPossibleExits());
 
         return strBuilder.toString();   
@@ -138,6 +143,24 @@ public class Location
     public void addItem(String itemName, Item item) 
     {
         this.items.put(itemName,item);
+    }
+
+    /**
+     * @return the boss of this game
+     */
+    public Monster getBoss()
+    {
+        return this.boss;
+    }
+
+    /**
+     * Sets the boss of this game to be in this location
+     * 
+     * @param boss of this game
+     */
+    public void setBoss(Monster boss)
+    {
+        this.boss = boss;
     }
 }
 

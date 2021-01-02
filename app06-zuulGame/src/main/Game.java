@@ -20,18 +20,24 @@ import main.items.ItemsGenerator;
  */
 public class Game 
 {
+    // The boss of this game
+    private static final Monster BOSS = new Monster("The Minotaur");
+
     private Location currentLocation; // the location where the player is
     private Player player;            // the player of this game
     private Map map;                  // the map of this game
     
     /**
-     * Create the game and initialise its external map
-     * and current location.
+     * Create the game and initialise its external map, 
+     * current location, items generator and the boss in the game.
      */
     public Game() 
     {
         this.map = new Map();
         this.currentLocation = this.map.getOutside();
+        
+        setBoss();
+
         new ItemsGenerator(this.map.getLocations());
     }
 
@@ -48,6 +54,15 @@ public class Game
      */
     public Location getCurrentLocation()
     {
+        if(isDungeon(this.currentLocation))
+        {
+            System.out.println(
+                "Ohh you found the Zuul boss...\n\r" +
+                "You must defeat this creature.\n\r" +
+                "But before that you must be strong enough to win this fight.\n\r" +
+                BOSS);   
+        }
+
         return this.currentLocation;
     }
 
@@ -80,6 +95,16 @@ public class Game
     }
 
     /**
+     * Sets the boss of this game.
+     * Each time the boss will be in the dungeon.
+     */
+    private void setBoss()
+    {
+        Location dungeon = this.map.getDungeon();
+        dungeon.setBoss(BOSS);
+    }
+
+    /**
      * Print out the opening message for the player.
      */
     public void printWelcome()
@@ -97,5 +122,23 @@ public class Game
     public void printCurrentLocationLongDescription() 
     {
         System.out.println(this.currentLocation.getLongDescription());
-	}
+    }
+    
+    /**
+     * Checks is the location that the player goes is 
+     * the dungeon.
+     * 
+     * @param nextLocation the location where the player goes
+     * @return true if the location is the dungeon
+     */
+    private boolean isDungeon(Location nextLocation) 
+    {
+        String locationDescription = nextLocation.getShortDescription();
+        if(locationDescription.contains("dungeon"))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }

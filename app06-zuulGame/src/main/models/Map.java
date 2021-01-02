@@ -38,7 +38,7 @@ public class Map
     {
         setLocationsExits();
     }
-   
+
     /**
      * @return pub location
      */

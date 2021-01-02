@@ -68,6 +68,9 @@ public class Player
      * The player name can be set only throught the constructor
      * and cannot be changed afterwards.
      * 
+     * @exception IllegalArgumentException is thrown
+     * if the name lenght is less than 3 symbols 
+     * 
      * @param newName of this player
      */
     private void setName(String newName) 
@@ -76,7 +79,6 @@ public class Player
         {
             throw new IllegalArgumentException("Player name cannot be less than 3 symbols!");
         }
-        
         this.name = newName;
     }
 
@@ -223,6 +225,8 @@ public class Player
         if(newHealthLevels <= 0)
         {
             System.out.println(this.name + " , you died in a cruel fight...\n\r");
+            System.out.println("GAME OVER");
+            System.out.println("Score: " + this.score);
         }
         else 
         {

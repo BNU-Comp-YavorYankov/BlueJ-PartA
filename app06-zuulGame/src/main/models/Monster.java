@@ -11,7 +11,11 @@ package main.models;
  * 
  * @name it needs to be more than 2 symbols long
  * 
- * @health default value 200%.
+ * @health default value 100%.
+ * It is possible to be set different value through
+ * the second constructor.
+ * 
+ * @attack default value 10.
  * It is possible to be set different value through
  * the second constructor.
  * 
@@ -22,24 +26,27 @@ public class Monster
 {
     private String name; // name of this monster
     private int health;  // health of this monster
+    private int attack;  // attack points of this monster
 
     /**
-     * Create new monster with default value for health
+     * Create new monster with default values for health and attack,
      * and set the name of this monster
      */
     public Monster(String name) 
     {
         setName(name);
         this.health = 100;
+        this.attack = 10;
     }
 
     /**
-     * Create new monster as set its health and name
+     * Create new monster as set its health, attack and name
      */
-    public Monster(String name, int health)
+    public Monster(String name, int health, int attack)
     {
         setName(name);
         this.health = health;
+        this.attack = attack;
     }
 
     /**
@@ -74,5 +81,27 @@ public class Monster
     public int getHealth()
     {
         return this.health;
+    }
+
+    /**
+     * @return the attack points of this monster
+     */
+    public int getAttack()
+    {
+        return this.attack;
+    }
+
+    /**
+     * @return information about this monster
+     */
+    @Override
+    public String toString()
+    {
+        StringBuilder strBuilder = new StringBuilder();
+        strBuilder.append("name:   " + this.name + "\n\r");
+        strBuilder.append("attack: " + this.attack+ "\n\r");
+        strBuilder.append("health: " + this.health + "\n\r");
+
+        return strBuilder.toString();
     }
 }
