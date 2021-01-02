@@ -25,6 +25,7 @@ public class Arena
         {
             while(true)
             {
+                System.out.println(this.player.getName() + " attack " + this.monster.getName());
                 this.monster.decreaseHealth(this.player.getAttackPoints());
                 if(this.monster.getHealth() == 0)
                 {
@@ -36,7 +37,9 @@ public class Arena
                     System.out.println("You won the game with score " + this.player.getScore() +"!!!");
                     break;
                 }
+                TimeUnit.SECONDS.sleep(1);
 
+                System.out.println(this.monster.getName() + " attack " + this.player.getName());
                 this.player.decreaseHealth(this.monster.getAttack());
                 if(this.player.getHealth() == 0)
                 {
@@ -45,7 +48,7 @@ public class Arena
                         ", you died in a cruel fight...\n\r");
                     System.out.println("GAME OVER");
                     System.out.println("Score: " + this.player.getScore());
-
+                    
                     break;
                 }
                 TimeUnit.SECONDS.sleep(1);

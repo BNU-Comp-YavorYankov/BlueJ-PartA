@@ -44,6 +44,7 @@ public class AttackCommand implements Command
             Player player = this.game.getPlayer();
             
             new Arena(player, monster);
+            this.game.setGameOver();
         }
     }
 

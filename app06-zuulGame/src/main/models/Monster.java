@@ -130,15 +130,15 @@ public class Monster
      * Checks is the decrease value meets the requirements
      * 
      * @exception IllegalArgumentException is thrown 
-     * if decrease value is less than or equal to zero
+     * if decrease value is less than zero
      * 
      * @param decrease value of health or energy 
      */
     private void isDecreaseValid(int decrease)
     {
-        if(decrease <= 0)
+        if(decrease < 0)
         {
-            throw new IllegalArgumentException("Decrease value cannot be equal or less than zero!");
+            throw new IllegalArgumentException("Decrease value cannot be less than zero!");
         }
     }
 }

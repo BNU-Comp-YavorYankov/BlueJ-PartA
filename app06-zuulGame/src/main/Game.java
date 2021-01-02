@@ -26,6 +26,8 @@ public class Game
     private Location currentLocation; // the location where the player is
     private Player player;            // the player of this game
     private Map map;                  // the map of this game
+
+    private boolean isGameOver;
     
     /**
      * Create the game and initialise its external map, 
@@ -57,7 +59,7 @@ public class Game
         if(isDungeon(this.currentLocation))
         {
             System.out.println(
-                "Ohh you found the Zuul boss...\n\r" +
+                "You found the Zuul boss...\n\r" +
                 "You must defeat this creature.\n\r" +
                 "But before that you must be strong enough to win this fight.\n\r" +
                 BOSS);   
@@ -105,6 +107,22 @@ public class Game
     }
 
     /**
+     * Sets the game is over
+     */
+    public void setGameOver() 
+    {
+        this.isGameOver = true;
+    }
+
+    /**
+     * @return is the game over
+     */
+    public boolean getIsGameOver() 
+    {
+		return this.isGameOver;
+	}
+
+    /**
      * Print out the opening message for the player.
      */
     public void printWelcome()
@@ -140,5 +158,4 @@ public class Game
         }
         return false;
     }
-
 }

@@ -50,9 +50,15 @@ public class CommandInvoker
         this.game.printCurrentLocationLongDescription();
 
         // Enter the main command loop.  Here we repeatedly read commands and
-        // execute them until the user run quit command and confirm it.
+        // execute them until the user run quit command and confirm it or
+        // the game is over.
         while (true) 
         {
+            if(this.game.getIsGameOver())
+            {
+                break;
+            }
+            
             String userCommand = reader.getString();
             System.out.println();
             execute(userCommand);
