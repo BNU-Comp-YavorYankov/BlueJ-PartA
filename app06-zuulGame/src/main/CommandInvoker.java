@@ -121,6 +121,7 @@ public class CommandInvoker
      */
     private void seedAvailableCommands() 
     {
+        COMMANDS.put("attack", new AttackCommand(this.game));
         COMMANDS.put("go", new GoCommand(this.game));
         COMMANDS.put("pick", new PickCommand(this.game));
         COMMANDS.put("map", new PrintMapCommand(this.game));

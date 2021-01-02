@@ -5,6 +5,13 @@ import main.items.Item;
 import main.models.Inventory;
 import main.models.Player;
 
+/**
+ * The command prints out information
+ * about the player of this game
+ * 
+ * @author Yavor Yankov
+ * @version 02/01/2021
+ */
 public class StatCommand implements Command 
 {
     private Game game; // instance of this game

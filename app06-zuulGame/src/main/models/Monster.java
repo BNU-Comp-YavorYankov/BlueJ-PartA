@@ -92,6 +92,27 @@ public class Monster
     }
 
     /**
+     * Decrease the health of this monster
+     * 
+     * @param decrease value
+     */
+    public void decreaseHealth(int decrease)
+    {
+        isDecreaseValid(decrease);
+        
+        this.health -= decrease;
+        
+        if(this.health < 0)
+        {
+            this.health = 0;
+        }
+
+        System.out.println(
+            this.name + ", HP decreased with "+ decrease +
+            ", health: " + this.health + "%.\n\r");
+    }
+
+    /**
      * @return information about this monster
      */
     @Override
@@ -103,5 +124,21 @@ public class Monster
         strBuilder.append("health: " + this.health + "\n\r");
 
         return strBuilder.toString();
+    }
+
+    /**
+     * Checks is the decrease value meets the requirements
+     * 
+     * @exception IllegalArgumentException is thrown 
+     * if decrease value is less than or equal to zero
+     * 
+     * @param decrease value of health or energy 
+     */
+    private void isDecreaseValid(int decrease)
+    {
+        if(decrease <= 0)
+        {
+            throw new IllegalArgumentException("Decrease value cannot be equal or less than zero!");
+        }
     }
 }

@@ -219,24 +219,17 @@ public class Player
     public void decreaseHealth(int decrease) 
     {
         isDecreaseValid(decrease);
+        
+        this.health -= decrease;
 
-        int newHealthLevels = this.health - decrease;
-
-        if(newHealthLevels <= 0)
+        if(this.health < 0)
         {
-            System.out.println(this.name + " , you died in a cruel fight...\n\r");
-            System.out.println("GAME OVER");
-            System.out.println("Score: " + this.score);
+            this.health = 0;
         }
-        else 
-        {
-            this.health = newHealthLevels;
-            
-            System.out.println(
-                this.name + " , after a fight with monster\n\r"+
-                "your health has decreased with " + decrease + "%.\n\r"+
-                "Now your health is " + this.health + "%.\n\r");
-        }
+           
+        System.out.println(
+            this.name + ", HP decreased with "+ decrease +
+            ", health: " + this.health + "%.\n\r");
     }
 
     /**
