@@ -45,6 +45,22 @@ public class Inventory
     }
 
     /**
+     * @return the equipped weapon
+     */
+    public Item[] getWeapon()
+    {
+        return this.weapon;
+    }
+
+    /**
+     * @return the equipped shield
+     */
+    public Shield getShield()
+    {
+        return this.shield;
+    }
+
+    /**
      * Equip shield this inventory.
      * 
      * @param shield to be equipped

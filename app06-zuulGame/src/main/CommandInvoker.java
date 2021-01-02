@@ -124,6 +124,7 @@ public class CommandInvoker
         COMMANDS.put("go", new GoCommand(this.game));
         COMMANDS.put("pick", new PickCommand(this.game));
         COMMANDS.put("map", new PrintMapCommand(this.game));
+        COMMANDS.put("stat", new StatCommand(this.game));
         COMMANDS.put("help", new HelpCommand(COMMANDS.values(), this.game));
         COMMANDS.put("quit", new QuitCommand());
     }

@@ -251,6 +251,14 @@ public class Player
     }
 
     /**
+     * @return max health capacity
+     */
+    public int getMaxHealthCapacity()
+    {
+        return this.maxHealthCapacity;
+    }
+
+    /**
      * @return inventory of this player
      */
     public Inventory getInventory()
