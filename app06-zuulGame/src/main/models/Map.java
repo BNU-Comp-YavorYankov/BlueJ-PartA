@@ -18,8 +18,8 @@ public class Map
     private static final Location PUB = new Location("in the campus pub");
     // Constant for outside location
     private static final Location OUTSIDE = new Location("outside the main entrance of the university");
-    // Constant for theater location
-    private static final Location THEATER = new Location("in a lecture theater");
+    // Constant for theatre location
+    private static final Location THEATRE = new Location("in a lecture theatre");
     // Constant for lab location
     private static final Location LAB = new Location("in a computing lab");
     // Constant for office location
@@ -56,11 +56,11 @@ public class Map
     }
 
     /**
-     * @return theater location
+     * @return theatre location
      */
-    public Location getTheater() 
+    public Location getTheatre() 
     {
-        return THEATER;
+        return THEATRE;
     }
 
     /**
@@ -112,7 +112,7 @@ public class Map
         {
             OUTSIDE, 
             PUB, 
-            THEATER, 
+            THEATRE, 
             LAB, 
             OFFICE, 
             WAREHOUSE, 
@@ -137,7 +137,7 @@ public class Map
         stringBuilder.append(" |                        |                        |\n\r");
         stringBuilder.append(" |                       \\|/                       |\n\r");
         stringBuilder.append(" | +---------+       +---------+       +---------+ |\n\r");
-        stringBuilder.append(" | |   PUB   | <---> | OUTSIDE | <---> | THEATER | |\n\r");
+        stringBuilder.append(" | |   PUB   | <---> | OUTSIDE | <---> | THEATRE | |\n\r");
         stringBuilder.append(" | +---------+       +---------+       +---------+ |\n\r");
         stringBuilder.append(" |     /|\\               /|\\                       |\n\r");
         stringBuilder.append(" |      |                 |                        |\n\r");
@@ -158,12 +158,12 @@ public class Map
         PUB.setExit("east", OUTSIDE);
         PUB.setExit("south", WAREHOUSE);
 
-        OUTSIDE.setExit("east", THEATER);
+        OUTSIDE.setExit("east", THEATRE);
         OUTSIDE.setExit("south", LAB);
         OUTSIDE.setExit("west", PUB);
         OUTSIDE.setExit("north", SHOPPING_CENTRE);
 
-        THEATER.setExit("west", OUTSIDE);
+        THEATRE.setExit("west", OUTSIDE);
 
         LAB.setExit("north", OUTSIDE);
         LAB.setExit("east", OFFICE);
