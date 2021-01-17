@@ -9,13 +9,15 @@ package main;
  */
 public class App
 {
+    private CommandInvoker invoker;
+    
     /**
      * This method creates and runs an instance of
      * the command invoker class
      */
     public static void main(String[] args)
     {
-        CommandInvoker invoker = new CommandInvoker();
+        invoker = new CommandInvoker();
         invoker.run();
     }
 }
