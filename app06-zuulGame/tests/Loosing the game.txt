@@ -1,0 +1,112 @@
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.  
+Type 'help' if you need help.
+
+Hey stranger, before you start, I need to know your name...
+> yavor
+Great yavor, let`s your journey begin now...
+
+You are outside the main entrance of the university.      
+There are a couple of items that can be collected:        
+rusty-shield increase your health capacity with 10 points.
+health-potion increase your health with 100 points.       
+Exits: east south north west
+> go north
+
+You are in the shopping centre.
+There are a couple of items that can be collected:   
+apple increase your health and energy with 25 points.
+energy-potion increase your energy with 100 points.  
+Exits: south west
+yavor, your energy levels has been decreased with 5%.
+Now you have 95% energy.
+
+score: 1
+> go west 
+
+You found the Zuul boss...
+You must defeat this creature.
+But before that you must be strong enough to win this fight.
+name:   The Minotaur
+attack: 10
+health: 100
+
+You are in the dungeon.
+Exits: east
+yavor, your energy levels has been decreased with 5%.
+Now you have 90% energy.
+
+score: 2
+> attack
+
+You found the Zuul boss...
+You must defeat this creature.
+But before that you must be strong enough to win this fight.
+name:   The Minotaur
+attack: 10
+health: 100
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 90%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 80%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 70%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 60%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 50%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 40%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 30%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 20%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 10%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 0%.
+
+yavor, you died in a cruel fight...
+
+GAME OVER
+Score: 2

@@ -1,0 +1,164 @@
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.
+Type 'help' if you need help.
+
+Hey stranger, before you start, I need to know your name...
+> yavor
+Great yavor, let`s your journey begin now...
+
+You are outside the main entrance of the university. 
+There are a couple of items that can be collected:   
+apple increase your health and energy with 25 points.
+health-potion increase your health with 100 points.  
+Exits: east south north west
+> go west
+
+You are in the campus pub.
+There are a couple of items that can be collected:
+golden-apple increase your health and energy with 50 points.
+steel-dagger with 12 attack points.
+Exits: east south
+yavor, your energy levels has been decreased with 5%.       
+Now you have 95% energy.
+
+score: 1
+> pick steel-dagger
+
+Your weapon steel-dagger has been equipped...
+yavor, your attack points are 12
+score: 2
+> go south
+
+You are in the pub`s warehouse.
+There are a couple of items that can be collected:
+rusty-shield increase your health capacity with 10 points.
+gold-sword with 18 attack points.
+Exits: north
+yavor, your energy levels has been decreased with 5%.
+Now you have 90% energy.
+
+score: 3
+> pick rusty-shield
+
+rusty-shield was equipped...
+Your max health capacity is 110
+score: 4
+> stat
+
+name:      yavor
+health:    100/110
+energy:    90/100
+attack:    12
+inventory:
+ - steel-dagger: 12 attack
+ - rusty-shield: +10 max health capacity
+
+You are in the pub`s warehouse.
+There are a couple of items that can be collected:
+gold-sword with 18 attack points.
+Exits: north
+> go north
+
+You are in the campus pub.
+There are a couple of items that can be collected:
+golden-apple increase your health and energy with 50 points.
+Exits: east south
+yavor, your energy levels has been decreased with 5%.
+Now you have 85% energy.
+
+score: 5
+> pick golden-apple
+
+yavor your health is full.
+
+yavor your energy levels are full.
+
+score: 6
+There are no more items in this location
+> go east
+
+You are outside the main entrance of the university.
+There are a couple of items that can be collected:
+apple increase your health and energy with 25 points.
+health-potion increase your health with 100 points.
+Exits: east south north west
+yavor, your energy levels has been decreased with 5%.
+Now you have 95% energy.
+
+score: 7
+> go north
+
+You are in the shopping centre.
+There are a couple of items that can be collected:
+vigilante-shield increase your health capacity with 20 points.
+bronze-dagger with 5 attack points.
+Exits: south west
+yavor, your energy levels has been decreased with 5%.
+Now you have 90% energy.
+
+score: 8
+> pick bronze-dagger
+
+bronze-dagger was equipped...
+yavor, your attack points are 17
+score: 9
+> go west
+
+You found the Zuul boss...
+You must defeat this creature.
+But before that you must be strong enough to win this fight.
+name:   The Minotaur
+attack: 10
+health: 100
+
+You are in the dungeon.
+Exits: east
+yavor, your energy levels has been decreased with 5%.
+Now you have 85% energy.
+
+score: 10
+> attack
+
+You found the Zuul boss...
+You must defeat this creature.
+But before that you must be strong enough to win this fight.
+name:   The Minotaur
+attack: 10
+health: 100
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 17, health: 83%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 100%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 17, health: 66%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 90%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 17, health: 49%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 80%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 17, health: 32%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 70%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 17, health: 15%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 60%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 17, health: 0%.
+
+score: 60
+yavor, you defeated The Minotaur
+You won the game with score 60!!!

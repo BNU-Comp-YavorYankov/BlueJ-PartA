@@ -1,0 +1,218 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS D:\University\First_Year\Programming Concepts\New PartB\BlueJ-PartA-And-PartB\app06-zuulGame\src\main>  
+& 'c:\Users\yavak\.vscode\extensions\vscjava.vscode-java-debug-0.30.0\scripts\launcher.bat' 'C:\Program Files\AdoptOpenJDK\jdk-14.0.2.12-hotspot\bin\java.exe' '-XX:+ShowCodeDetailsInExceptionMessages' '-Dfile.encoding=UTF-8' '-cp' 'C:\Users\yavak\AppData\Roaming\Code\User\workspaceStorage\36b82d0245a3e2e1224bf1dcbbc2a734\redhat.java\jdt_ws\jdt.ls-java-project\bin' 'main.App'
+
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.  
+Type 'help' if you need help.
+
+Hey stranger, before you start, I need to know your name...
+> yavor
+Great yavor, let`s your journey begin now...
+
+You are outside the main entrance of the university.      
+There are a couple of items that can be collected:        
+iron-sword with 10 attack points.
+opal-apple increase your health and energy with 65 points.
+Exits: east south north west
+> go east
+
+You are in a lecture theatre.
+There are a couple of items that can be collected: 
+golden-apple increase your health and energy with 50 points.
+health-potion increase your health with 100 points.
+Exits: west
+yavor, your energy levels has been decreased with 5%.       
+Now you have 95% energy.
+
+score: 1
+> pick iron-sword
+
+yavor, the item you are trying to pick cannot be found!
+> pick golden-apple
+
+yavor your health is full.
+
+yavor your energy levels are full.
+
+score: 2
+> map
+
+ +-------------------------------------------------+
+ | +---------+       +-----------------+           |
+ | | DUNGEON | <---> | SHOPPING CENTRE |           |
+ | +---------+       +-----------------+           |
+ |                       /|\                       |
+ |                        |                        |
+ |                       \|/                       |
+ | +---------+       +---------+       +---------+ |
+ | |   PUB   | <---> | OUTSIDE | <---> | THEATRE | |
+ | +---------+       +---------+       +---------+ |
+ |     /|\               /|\                       |
+ |      |                 |                        |
+ |     \|/               \|/                       |
+ | +---------+       +---------+       +---------+ |
+ | |WAREHOUSE|       |   LAB   | <---> | OFFICE  | |
+ | +---------+       +---------+       +---------+ |
+ +-------------------------------------------------+
+
+
+You are in a lecture theatre.
+There are a couple of items that can be collected:
+health-potion increase your health with 100 points.
+Exits: west
+> stat
+name:      yavor
+health:    100/100
+energy:    100/100
+attack:    0
+ - empty
+
+You are in a lecture theatre.
+There are a couple of items that can be collected:
+health-potion increase your health with 100 points.
+Exits: west
+> help
+
+You are lost. You are alone. You wander
+around at the university.
+
+Your command words are:
+help - print out all commands and current location
+stat - print out information about this player
+pick {item name} - pick an item
+attack - attack a monster
+go {direction} - go to the given direction
+quit - quit the game
+map - print out the map
+
+You are in a lecture theatre.
+There are a couple of items that can be collected:
+health-potion increase your health with 100 points.
+Exits: west
+> quit
+
+Are you sure you want to quit the game? Y/N> y
+Thank you for playing.  Good bye.
+
+// Using attack command 
+
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.
+Type 'help' if you need help.
+
+Hey stranger, before you start, I need to know your name...
+> yavor 
+Great yavor, let`s your journey begin now...
+
+You are outside the main entrance of the university.
+There are a couple of items that can be collected:
+apple increase your health and energy with 25 points.
+phantom-shield increase your health capacity with 30 points.
+Exits: east south north west
+> attack
+
+There is no monsters in this location!
+> go north
+
+You are in the shopping centre.
+There are a couple of items that can be collected:
+steel-dagger with 12 attack points.
+iron-sword with 10 attack points.
+Exits: south west
+yavor, your energy levels has been decreased with 5%.
+Now you have 95% energy.
+
+score: 1
+> go west
+
+You found the Zuul boss...
+You must defeat this creature.
+But before that you must be strong enough to win this fight.
+name:   The Minotaur
+attack: 10
+health: 100
+
+You are in the dungeon.
+Exits: east
+yavor, your energy levels has been decreased with 5%.
+Now you have 90% energy.
+
+score: 2
+> attack
+
+You found the Zuul boss...
+You must defeat this creature.
+But before that you must be strong enough to win this fight.
+name:   The Minotaur
+attack: 10
+health: 100
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 90%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 80%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 70%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 60%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 50%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 40%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 30%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 20%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 10%.
+
+yavor attack The Minotaur
+The Minotaur, HP decreased with 0, health: 100%.
+
+The Minotaur attack yavor
+yavor, HP decreased with 10, health: 0%.
+
+yavor, you died in a cruel fight...
+
+GAME OVER
+Score: 2 

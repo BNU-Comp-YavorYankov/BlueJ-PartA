@@ -1,0 +1,299 @@
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.  
+Type 'help' if you need help.
+
+Hey stranger, before you start, I need to know your name...
+> yavor
+Great yavor, let`s your journey begin now...
+
+You are outside the main entrance of the university.        
+There are a couple of items that can be collected: 
+apple increase your health and energy with 25 points.       
+phantom-shield increase your health capacity with 30 points.
+Exits: east south north west
+> pick apple
+
+yavor your health is full.        
+
+yavor your energy levels are full.
+
+score: 1
+> pick phantom-shield
+
+phantom-shield was equipped... 
+Your max health capacity is 130
+score: 2
+There are no more items in this location
+> go east
+
+You are in a lecture theatre.
+There are a couple of items that can be collected:
+emerald-sword with 15 attack points.
+hex-dagger with 7 attack points.
+Exits: west
+yavor, your energy levels has been decreased with 5%.
+Now you have 95% energy.
+
+score: 3
+> pick emerald-sword
+
+emerald-sword was equipped...
+yavor, your attack points are 15
+score: 4
+> pick hex-dagger 
+
+hex-dagger was equipped...
+yavor, your attack points are 7
+score: 5
+There are no more items in this location
+> stat 
+
+name:      yavor
+health:    100/130
+energy:    95/100
+attack:    7
+inventory:
+ - hex-dagger: 7 attack
+ - phantom-shield: +30 max health capacity
+
+You are in a lecture theatre.
+Exits: west
+> go west
+
+You are outside the main entrance of the university.
+Exits: east south north west
+yavor, your energy levels has been decreased with 5%.
+Now you have 90% energy.
+
+score: 6
+> go south 
+
+You are in a computing lab.
+There are a couple of items that can be collected:
+opal-apple increase your health and energy with 65 points.
+energy-potion increase your energy with 100 points.
+Exits: east north
+yavor, your energy levels has been decreased with 5%.
+Now you have 85% energy.
+
+score: 7
+> pick opal-apple
+
+yavor your health is full.
+
+yavor your energy levels are full.
+
+score: 8
+> pick energy-potion
+
+yavor your energy levels are full.
+
+score: 9
+There are no more items in this location
+> stat
+
+name:      yavor
+health:    130/130
+energy:    100/100
+attack:    7
+inventory:
+ - hex-dagger: 7 attack
+ - phantom-shield: +30 max health capacity
+
+You are in a computing lab.
+Exits: east north
+> go east
+
+You are in the computing admin office.
+There are a couple of items that can be collected:
+steel-dagger with 12 attack points.
+bronze-dagger with 5 attack points.
+Exits: west
+yavor, your energy levels has been decreased with 5%.
+Now you have 95% energy.
+
+score: 10
+> pick steel-dagger
+
+steel-dagger was equipped...
+yavor, your attack points are 19
+score: 11
+> pick bronze-dagger
+
+You have two equipped daggers.
+
+Please, choose one of your daggers to be raplaced with the new one:
+
+hex-dagger
+steel-dagger
+> steel-dagger
+steel-dagger was replaced with bronze-dagger
+yavor, your attack points are 12
+score: 12
+There are no more items in this location
+> stat
+
+name:      yavor
+health:    130/130
+energy:    95/100
+attack:    12
+inventory:
+ - hex-dagger: 7 attack
+ - bronze-dagger: 5 attack
+ - phantom-shield: +30 max health capacity
+
+You are in the computing admin office.
+Exits: west
+> go west
+
+You are in a computing lab.
+Exits: east north
+yavor, your energy levels has been decreased with 5%.
+Now you have 90% energy.
+
+score: 13
+> go north
+
+You are outside the main entrance of the university.
+Exits: east south north west
+yavor, your energy levels has been decreased with 5%.
+Now you have 85% energy.
+
+score: 14
+> go west
+
+You are in the campus pub.
+There are a couple of items that can be collected:
+vigilante-shield increase your health capacity with 20 points.
+health-potion increase your health with 100 points.
+Exits: east south
+yavor, your energy levels has been decreased with 5%.
+Now you have 80% energy.
+
+score: 15
+> pick vigilante-shield
+
+phantom-shield was replaced with vigilante-shield
+Your max health capacity is 150
+score: 16
+> pick health-potion
+
+yavor your health is full.
+
+score: 17
+There are no more items in this location
+> stat
+
+name:      yavor
+health:    150/150
+energy:    80/100
+attack:    12
+inventory:
+ - hex-dagger: 7 attack
+ - bronze-dagger: 5 attack
+ - vigilante-shield: +20 max health capacity
+
+You are in the campus pub.
+Exits: east south
+> go south
+
+You are in the pub`s warehouse.
+There are a couple of items that can be collected:
+golden-apple increase your health and energy with 50 points.
+gold-sword with 18 attack points.
+Exits: north
+yavor, your energy levels has been decreased with 5%.
+Now you have 75% energy.
+
+score: 18
+> pick golden-apple
+
+yavor your health is full.
+
+yavor your energy levels are full.
+
+score: 19
+> pick gold-sword
+
+gold-sword was equipped...
+yavor, your attack points are 18
+score: 20
+There are no more items in this location
+> stat
+
+name:      yavor
+health:    150/150
+energy:    100/100
+attack:    18
+inventory:
+ - gold-sword: 18 attack
+ - vigilante-shield: +20 max health capacity
+
+You are in the pub`s warehouse.
+Exits: north
+> go north
+
+You are in the campus pub.
+Exits: east south
+yavor, your energy levels has been decreased with 5%.
+Now you have 95% energy.
+
+score: 21
+> go east
+
+You are outside the main entrance of the university.
+Exits: east south north west
+yavor, your energy levels has been decreased with 5%.
+Now you have 90% energy.
+
+score: 22
+> go north
+
+You are in the shopping centre.
+There are a couple of items that can be collected:
+rusty-shield increase your health capacity with 10 points.
+iron-sword with 10 attack points.
+Exits: south west
+yavor, your energy levels has been decreased with 5%.
+Now you have 85% energy.
+
+score: 23
+> pick iron-sword
+
+iron-sword was equipped...
+yavor, your attack points are 10
+score: 24
+> pick rusty-shield
+
+vigilante-shield was replaced with rusty-shield
+Your max health capacity is 160
+score: 25
+There are no more items in this location
+> stat
+
+name:      yavor
+health:    150/160
+energy:    85/100
+attack:    10
+inventory:
+ - iron-sword: 10 attack
+ - rusty-shield: +10 max health capacity
+
+You are in the shopping centre.
+Exits: south west
+> go west
+
+You found the Zuul boss...
+You must defeat this creature.
+But before that you must be strong enough to win this fight.
+name:   The Minotaur
+attack: 10
+health: 100
+
+You are in the dungeon.
+Exits: east
+yavor, your energy levels has been decreased with 5%.
+Now you have 80% energy.
+
+score: 26
+>

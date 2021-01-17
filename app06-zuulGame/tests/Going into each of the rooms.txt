@@ -1,0 +1,150 @@
+Welcome to the World of Zuul!
+World of Zuul is a new, incredibly boring adventure game.  
+Type 'help' if you need help.
+
+Hey stranger, before you start, I need to know your name...
+> yavor
+Great yavor, let`s your journey begin now...        
+
+You are outside the main entrance of the university.
+There are a couple of items that can be collected:  
+emerald-sword with 15 attack points.
+gold-sword with 18 attack points.
+Exits: east south north west
+> go east
+
+You are in a lecture theatre.
+There are a couple of items that can be collected:   
+steel-dagger with 12 attack points.
+bronze-dagger with 5 attack points.
+Exits: west
+yavor, your energy levels has been decreased with 5%.
+Now you have 95% energy.
+
+score: 1
+> go west
+
+You are outside the main entrance of the university.
+There are a couple of items that can be collected:
+emerald-sword with 15 attack points.
+gold-sword with 18 attack points.
+Exits: east south north west
+yavor, your energy levels has been decreased with 5%.
+Now you have 90% energy.
+
+score: 2
+> go south
+
+You are in a computing lab.
+There are a couple of items that can be collected:
+golden-apple increase your health and energy with 50 points.
+hex-dagger with 7 attack points.
+Exits: east north
+yavor, your energy levels has been decreased with 5%.
+Now you have 85% energy.
+
+score: 3
+> go east
+
+You are in the computing admin office.
+There are a couple of items that can be collected:
+phantom-shield increase your health capacity with 30 points.
+iron-sword with 10 attack points.
+Exits: west
+yavor, your energy levels has been decreased with 5%.
+Now you have 80% energy.
+
+score: 4
+> go west
+
+You are in a computing lab.
+There are a couple of items that can be collected:
+golden-apple increase your health and energy with 50 points.
+hex-dagger with 7 attack points.
+Exits: east north
+yavor, your energy levels has been decreased with 5%.
+Now you have 75% energy.
+
+score: 5
+> go north
+
+You are outside the main entrance of the university.
+There are a couple of items that can be collected:
+emerald-sword with 15 attack points.
+gold-sword with 18 attack points.
+Exits: east south north west
+yavor, your energy levels has been decreased with 5%.
+Now you have 70% energy.
+
+score: 6
+> go west
+
+You are in the campus pub.
+There are a couple of items that can be collected:
+vigilante-shield increase your health capacity with 20 points.
+opal-apple increase your health and energy with 65 points.
+Exits: east south
+yavor, your energy levels has been decreased with 5%.
+Now you have 65% energy.
+
+score: 7
+> go south
+
+You are in the pub`s warehouse.
+There are a couple of items that can be collected:
+energy-potion increase your energy with 100 points.
+health-potion increase your health with 100 points.
+Exits: north
+yavor, your energy levels has been decreased with 5%.
+Now you have 60% energy.
+
+score: 8
+> go north
+
+You are in the campus pub.
+There are a couple of items that can be collected:
+vigilante-shield increase your health capacity with 20 points.
+opal-apple increase your health and energy with 65 points.
+Exits: east south
+yavor, your energy levels has been decreased with 5%.
+Now you have 55% energy.
+
+score: 9
+> go east
+
+You are outside the main entrance of the university.
+There are a couple of items that can be collected:
+emerald-sword with 15 attack points.
+gold-sword with 18 attack points.
+Exits: east south north west
+yavor, your energy levels has been decreased with 5%.
+Now you have 50% energy.
+
+score: 10
+> go north
+
+You are in the shopping centre.
+There are a couple of items that can be collected:
+apple increase your health and energy with 25 points.
+rusty-shield increase your health capacity with 10 points.
+Exits: south west
+yavor, your energy levels has been decreased with 5%.
+Now you have 45% energy.
+
+score: 11
+> go west
+
+You found the Zuul boss...
+You must defeat this creature.
+But before that you must be strong enough to win this fight.
+name:   The Minotaur
+attack: 10
+health: 100
+
+You are in the dungeon.
+Exits: east
+yavor, your energy levels has been decreased with 5%.
+Now you have 40% energy.
+
+score: 12
+>
